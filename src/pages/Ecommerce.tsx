@@ -25,11 +25,6 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 
 function Ecommerce() {
-  // const [message, setMessage] = useState('');
-  // const [chat, setChat] = useState([
-  //   { role: 'assistant', content: 'Olá! Sou a JulIA, sua assistente virtual. Como posso ajudar você hoje?' }
-  // ]);
-
   // Novo estado para controlar o fluxo do formulário
   const [formStep, setFormStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -43,29 +38,8 @@ function Ecommerce() {
     preferredTime: ''
   });
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (!message.trim()) return;
-
-  //   setChat(prev => [...prev, { role: 'user', content: message }]);
-
-  //   setTimeout(() => {
-  //     setChat(prev => [...prev, {
-  //       role: 'assistant',
-  //       content: 'Esta é uma demonstração da JulIA. Em uma versão real, você receberá respostas personalizadas e inteligentes baseadas no seu input. Agende uma demonstração completa!'
-  //     }]);
-  //   }, 1000);
-
-  //   setMessage('');
-  // };
-
   const handleQuestionSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simula envio para o backend
-    // console.log(Enviando pergunta ${formStep} para o backend:, 
-    //    formStep === 1 ? formData.question1 : formData.question2
-    // );
 
     // Avança para próxima etapa
     setFormStep(formStep + 1);
@@ -369,53 +343,61 @@ function Ecommerce() {
       </section>
 
       {/* Schedule Demo Section */}
-      <section id="cadastro" className="py-20 bg-gray-900/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-              Agende uma Demonstração
-            </h2>
-            <div className="bg-gray-800/50 rounded-2xl p-8">
-              {/* Indicador de progresso */}
-              <div className="flex justify-between mb-8">
-                <div className={`flex items-center ${formStep >= 1 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 1 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    1
+            <section id="cadastro" className="py-20 bg-gray-900/50">
+              <div className="container mx-auto px-4 flex flex-col items-center text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Agende um bate-papo para saber mais
+                </h2>
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+                  onClick={() => window.open('https://share.hsforms.com/1Q9NyspHxR8GM3g7vw60dUgblq37', '_blank')}
+                >
+                  <Calendar className="w-5 h-5" /> Marcar reunião
+                </button>
+      
+      
+                {/* <div className="max-w-2xl mx-auto">
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+                    Agende uma Demonstração
+                  </h2>
+                  <div className="bg-gray-800/50 rounded-2xl p-8"> */}
+                    {/* Indicador de progresso */}
+                    {/* <div className="flex justify-between mb-8">
+                      <div className={`flex items-center ${formStep >= 1 ? 'text-blue-500' : 'text-gray-500'}`}>
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
+                            formStep >= 1 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
+                          }`}
+                        >
+                          1
+                        </div>
+                        <span className="ml-2 text-sm">Desafio</span>
+                      </div>
+                      <div className={`flex items-center ${formStep >= 2 ? 'text-blue-500' : 'text-gray-500'}`}>
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
+                            formStep >= 2 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
+                          }`}
+                        >
+                          2
+                        </div>
+                        <span className="ml-2 text-sm">Volume</span>
+                      </div>
+                      <div className={`flex items-center ${formStep >= 3 ? 'text-blue-500' : 'text-gray-500'}`}>
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
+                            formStep >= 3 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
+                          }`}
+                        >
+                          3
+                        </div>
+                        <span className="ml-2 text-sm">Dados</span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="ml-2 text-sm">Desafio</span>
-                </div>
-                <div className={`flex items-center ${formStep >= 2 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 2 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    2
-                  </div>
-                  <span className="ml-2 text-sm">Volume</span>
-                </div>
-                <div className={`flex items-center ${formStep >= 3 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 3 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    3
-                  </div>
-                  <span className="ml-2 text-sm">Dados</span>
-                </div>
+                </div> */}
               </div>
-
-              {/* Conteúdo do formulário baseado na etapa */}
-              {renderFormStep()}
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
 
       {/* Footer */}

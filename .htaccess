@@ -1,0 +1,11 @@
+# Ativa o mod_rewrite
+RewriteEngine On
+RewriteBase /
+
+# Ignora a index.html para evitar loops
+RewriteRule ^index\.html$ - [L]
+
+# Se o arquivo ou diretório não existir, redireciona para index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
