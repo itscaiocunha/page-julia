@@ -225,7 +225,7 @@ function Turismo() {
           <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
             <iframe
               className="w-full h-full"
-              src="https://w7startup.com.br/video/Ecommerce.mp4"
+              src="https://w7startup.com.br/video/Turismo.mp4"
               title="JulIA Demo"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

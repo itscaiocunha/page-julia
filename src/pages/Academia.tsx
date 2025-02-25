@@ -198,30 +198,27 @@ function Academia() {
 
       {/* CTA + WhatsApp Demo Section */}
      <section className="container mx-auto px-4 py-16 md:py-24">
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-        Atendimento inteligente com a JulIA: mais eficiência para sua academia
-      </h1>
-      <p className="text-xl text-gray-300 mb-8">
-        Automatize inscrições, responda dúvidas e otimize o suporte aos seus alunos com nossa IA especializada em academias.
-      </p>
-      <div className="flex gap-4">
-        <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
-          Testar agora <ArrowRight className="w-5 h-5" />
-        </button>
-      </div>
-    </div>
-    <div className="relative flex justify-center">
-      <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
-      <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-      <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Conversa de atendimento virtual para academia" />
-    </div>
-  </div>
-</section>
-
-
-
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
+              Atendimento inteligente com a JulIA: mais eficiência para sua academia
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Automatize inscrições, responda dúvidas e otimize o suporte aos seus alunos com nossa IA especializada em academias.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
+                Testar agora <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+          <div className="relative flex justify-center">
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
+            <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Conversa de atendimento virtual para academia" />
+          </div>
+        </div>
+      </section>
 
       {/* Video Section */}
       <section className="py-20 bg-gray-900/50">
@@ -230,9 +227,9 @@ function Academia() {
           <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
             <iframe
               className="w-full h-full"
-              src="https://w7startup.com.br/video/Ecommerce.mp4"
+              src="https://w7startup.com.br/video/Academia.mp4"
               title="JulIA Demo"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
