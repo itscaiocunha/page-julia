@@ -200,10 +200,10 @@ function Turismo() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-              Atendimento inteligente com a JulIA: mais eficiência para você e seus clientes
+              Transforme a experiência dos seus clientes e torne suas viagens ainda mais especiais!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Tire dúvidas, recomende pacotes e aumente suas vendas com nossa IA especializada em turismo.
+              Todos os detalhes, recomendações de pacotes e muito mais 24 horas por dia! 
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">

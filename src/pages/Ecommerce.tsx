@@ -206,10 +206,10 @@ function Ecommerce() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              Aumente suas vendas com a JulIA: Sua vendedora virtual 24/7
+              Experiência personalizada e o fim do abandono de carrinho!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Transforme visitantes em clientes, automatize o atendimento e aumente sua taxa de conversão com nossa IA especialista em vendas.
+              Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente.
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">

@@ -200,10 +200,10 @@ function Telecomunicacao() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-              Atendimento automatizado com a JulIA: mais eficiência para sua operadora de telecom
+              Aumente a base de assinantes da sua empresa com um atendimento rápido e personalizado.
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Resolva dúvidas, reduza filas de espera e melhore a experiência do cliente com nossa IA especializada em telecomunicações.
+              Dúvidas respondidas em instantes, detalhes e recomendações de pacotes de assinaturas e muito mais!
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">

@@ -203,7 +203,7 @@ function Automobilismo() {
   <div className="grid md:grid-cols-2 gap-12 items-center">
     <div>
       <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-        Gestão inteligente com a JulIA: mais controle e eficiência para seu estacionamento
+        Centralize os atendimentos da sua empresa e aumente o fluxo de clientes satisfeitos!
       </h1>
       <p className="text-xl text-gray-300 mb-8">
         Automatize reservas, controle o fluxo de veículos e melhore a experiência dos seus clientes com nossa IA especializada.

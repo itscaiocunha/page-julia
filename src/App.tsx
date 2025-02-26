@@ -10,7 +10,7 @@ import Saude from "./pages/Saude";
 import Beleza from "./pages/Beleza";
 import Delivery from "./pages/Delivery";
 import Academia from "./pages/Academia";
-import Automobilismo from "./pages/Automobilismo";
+import Automobilismo from "./pages/Automotivo";
 import Turismo from "./pages/Turismo";
 import Telecomunicacao from "./pages/Telecomunicacao";
 
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/beleza" element={<Beleza />} />
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/academia" element={<Academia />} />
-          <Route path="/automobilismo" element={<Automobilismo />} />
+          <Route path="/automotivo" element={<Automobilismo />} />
           <Route path="/turismo" element={<Turismo />} />
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
           <Route path="*" element={<NotFound />} />

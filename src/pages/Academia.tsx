@@ -201,10 +201,10 @@ function Academia() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-              Atendimento inteligente com a JulIA: mais eficiência para sua academia
+              Atenda seus alunos com um plano ideal e personalizado para cada necessidade!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Automatize inscrições, responda dúvidas e otimize o suporte aos seus alunos com nossa IA especializada em academias.
+              Aumente o número de clientes da sua academia com um atendimento rápido e personalizado!  Detalhes de planos,  assinaturas e suporte 24 horas!
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
