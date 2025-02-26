@@ -13,14 +13,12 @@ const VideoSection = () => {
           </p>
           
           <div className="flex justify-center">
-            <div className="rounded-xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md p-4">
               <video 
                 controls 
-                className="w-[280px] h-[500px] mx-auto"
+                className="w-full h-auto mx-auto"
               >
-                <source src="/videos/responda.mp4" type="video/mp4" />
+                <source src="/videos/Responda_1.mp4" type="video/mp4" />
               </video>
-            </div>
           </div>
         </div>
       </div>

@@ -49,8 +49,108 @@ const Pricing = () => {
         ],
         link: 'https://share.hsforms.com/1gfFzUCJoQjytPu_r0Z3cEQblq37'
       }
+    ],
+    semestral: [
+      {
+        name: 'Startup+',
+        price: '2.499,00',
+        period: 'por 6 meses',
+        features: [
+          'Inteligência Artificial',
+          '7 mil interações/mês',
+          '1 Agente Autônomo',
+          '5.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 8/7'
+        ],
+        link: 'https://share.hsforms.com/1SP_P32BUQz-344HwpgS3WQblq37'
+      },
+      {
+        name: 'Premium',
+        price: '4.999,00',
+        period: 'por 6 meses',
+        features: [
+          'Inteligência Artificial',
+          '10 mil interações/mês',
+          '1 Agente Autônomo',
+          '8.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 12/7'
+        ],
+        featured: true,
+        link: 'https://share.hsforms.com/1SP_P32BUQz-344HwpgS3WQblq37'
+      },
+      {
+        name: 'Master',
+        price: '7.199,00',
+        period: 'por 6 meses',
+        features: [
+          'Atendimento dedicado',
+          '20 mil interações/mês',
+          '1 agente autônomo',
+          '12.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 24/7'
+        ],
+        link: 'https://share.hsforms.com/1SP_P32BUQz-344HwpgS3WQblq37'
+      }
+    ],
+    anual: [
+      {
+        name: 'Startup+',
+        price: '4.799,00',
+        period: 'por ano',
+        features: [
+          'Inteligência Artificial',
+          '7 mil interações/mês',
+          '1 Agente Autônomo',
+          '5.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 8/7'
+        ],
+        link: 'https://share.hsforms.com/1dypHXw47ST2zfzZkEnbqwQblq37'
+      },
+      {
+        name: 'Premium',
+        price: '9.599,00',
+        period: 'por ano',
+        features: [
+          'Inteligência Artificial',
+          '10 mil interações/mês',
+          '1 Agente Autônomo',
+          '8.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 12/7'
+        ],
+        featured: true,
+        link: 'https://share.hsforms.com/1dypHXw47ST2zfzZkEnbqwQblq37'
+      },
+      {
+        name: 'Master',
+        price: '13.799,00',
+        period: 'por ano',
+        features: [
+          'Atendimento dedicado',
+          '20 mil interações/mês',
+          '1 agente autônomo',
+          '12.000.000/milhão de caracteres para treinar o Cérebro',
+          'Suporte 24/7'
+        ],
+        link: 'https://share.hsforms.com/1gfFzUCJoQjytPu_r0Z3cEQblq37'
+      }
+    ],
+    customizado: [
+      {
+        name: 'Plano Customizado',
+        price: 'Sob Consulta',
+        period: '',
+        features: [
+          'Soluções personalizadas',
+          'Interações ilimitadas',
+          'Agentes Autônomos ilimitados',
+          'Cérebro sob medida',
+          'Suporte dedicado 24/7'
+        ],
+        link: 'https://wa.me/5519993297037'
+      }
     ]
   };
+
 
   return (
     <section id="our-pricings" className="py-20">
@@ -81,7 +181,7 @@ const Pricing = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {plans.mensal.map((plan, index) => (
+          {plans[period].map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
@@ -138,6 +238,7 @@ const Pricing = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
