@@ -187,7 +187,7 @@ function Academia() {
           </div>
           <a
             href="#cadastro"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="bg-blue-500 hover:opacity-90 text-white px-6 py-2 text-black rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-300"
             aria-label="Fale Conosco"
           >
             Fale Conosco
@@ -200,14 +200,14 @@ function Academia() {
      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 w-full md:w-[90%] lg:w-[100%] bg-gradient-to-b from-[#f9e863] to-[#ff9100] bg-clip-text text-transparent">
               Atenda seus alunos com um plano ideal e personalizado para cada necessidade!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Aumente o número de clientes da sua academia com um atendimento rápido e personalizado!  Detalhes de planos,  assinaturas e suporte 24 horas!
             </p>
             <div className="flex gap-4">
-              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
+              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full text-[24px] text-black font-medium flex items-center gap-2 transition-colors">
                 Testar agora <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -215,7 +215,7 @@ function Academia() {
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Conversa de atendimento virtual para academia" />
+            <img className="w-full max-w-[800px]" src="/images/Academia.png" alt="Conversa de atendimento virtual para academia" />
           </div>
         </div>
       </section>
@@ -308,7 +308,7 @@ function Academia() {
 
         {/* Contador de integrações */}
         <h3 className="text-3xl font-bold mb-4 text-center">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
+          <span className="bg-gradient-to-b from-[#f9e863] to-[#ff9100] from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
         </h3>
       </section>
 
@@ -344,7 +344,7 @@ function Academia() {
             Agende um bate-papo para saber mais
           </h2>
           <button
-            className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+            className="bg-blue-500 hover:bg-blue-600 px-8 py-4 text-black text-[24px] rounded-full font-medium flex items-center gap-2 transition-colors"
             onClick={() => window.open('https://share.hsforms.com/1CCnSfBE9SWWulIUs8cbDsAblq37', '_blank')}
           >
             <Calendar className="w-5 h-5" /> Marcar reunião
@@ -402,7 +402,7 @@ function Academia() {
             <div className="flex items-center gap-2">
               <img className="w-32" src="/images/logo.png" alt="logo Julia" />
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+            <div className="flex items-center gap-2 bg-gradient-to-b from-[#f9e863] to-[#ff9100] from-blue-400 to-purple-500 text-transparent bg-clip-text">
               <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> | 
               <a href="https://www.linkedin.com/company/hellojulia/">Linkedin</a> |
               <a href="mailto:ola@hellojulia.com.br">E-mail</a>

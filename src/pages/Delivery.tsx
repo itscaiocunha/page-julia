@@ -200,14 +200,14 @@ function Delivery() {
      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#C78E22] to-[#E00A0A] text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
               Atendimento ágil, mais pedidos e mais clientes para o seu delivery!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Pedidos concluídos com agilidade, respostas imediatas e detalhadas! Aumente seu faturamento e libere o fluxo de atendimentos do seu restaurante.
             </p>
             <div className="flex gap-4">
-              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
+              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 text-[24px] rounded-full font-medium flex items-center gap-2 transition-colors">
                 Testar agora <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -215,7 +215,7 @@ function Delivery() {
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Conversa de atendimento virtual para delivery" />
+            <img className="w-full max-w-[800px]" src="/images/Delivery.png" alt="Conversa de atendimento virtual para delivery" />
           </div>
         </div>
       </section>
@@ -311,7 +311,7 @@ function Delivery() {
 
         {/* Contador de integrações */}
         <h3 className="text-3xl font-bold mb-4 text-center">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
+          <span className="bg-gradient-to-b from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
         </h3>
       </section>
 
@@ -347,7 +347,7 @@ function Delivery() {
             Agende um bate-papo para saber mais
           </h2>
           <button
-            className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+            className="bg-blue-500 hover:bg-blue-600 px-8 py-3 text-[24px] rounded-full font-medium flex items-center gap-2 transition-colors"
             onClick={() => window.open('https://share.hsforms.com/18X_Kb8dQRjmEmv0pAgMYtAblq37', '_blank')}
           >
             <Calendar className="w-5 h-5" /> Marcar reunião
@@ -405,7 +405,7 @@ function Delivery() {
             <div className="flex items-center gap-2">
               <img className="w-32" src="/images/logo.png" alt="logo Julia" />
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+            <div className="flex items-center gap-2 bg-blue-500 text-transparent bg-clip-text">
               <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> | 
               <a href="https://www.linkedin.com/company/hellojulia/">Linkedin</a> |
               <a href="mailto:ola@hellojulia.com.br">E-mail</a>

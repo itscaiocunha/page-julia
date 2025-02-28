@@ -199,7 +199,7 @@ function Turismo() {
      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#1A9900] to-[#48654E] text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
               Transforme a experiência dos seus clientes e torne suas viagens ainda mais especiais!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -214,7 +214,7 @@ function Turismo() {
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Atendimento virtual para turismo" />
+            <img className="w-full max-w-[800px]" src="/images/Turismo.png" alt="Atendimento virtual para turismo" />
           </div>
         </div>
       </section>

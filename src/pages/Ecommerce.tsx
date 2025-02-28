@@ -205,7 +205,7 @@ function Ecommerce() {
      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#892CDB] to-white text-transparent bg-clip-text">
               Experiência personalizada e o fim do abandono de carrinho!
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -220,7 +220,7 @@ function Ecommerce() {
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-sm" src="/images/conversaJulia.png" alt="Conversa do WhatsApp" />
+            <img className="w-full max-w-[800px]" src="/images/Ecommerce.png" alt="Conversa do WhatsApp" />
           </div>
         </div>
       </section>
