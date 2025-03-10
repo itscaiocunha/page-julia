@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Ecommerce from "./pages/Ecommerce";
+import FormPage from "./pages/formulárioEcommerce";
+import FormPages from "./pages/formulárioSaude";
+import FormPageB from "./pages/formulárioBeleza";
+import FormPageA from "./pages/formulárioAcademia";
 import Saude from "./pages/Saude";
 import Beleza from "./pages/Beleza";
 import Delivery from "./pages/Delivery";
@@ -25,6 +29,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
+          <Route path="/ecommerce/formulario" element={<FormPage />} />
+          <Route path="/saude/formulario" element={<FormPages />} />
+          <Route path="/academia/formulario" element={<FormPageA />} />
+          <Route path="/beleza/formulario" element={<FormPageB />} />
           <Route path="/saude" element={<Saude />} />
           <Route path="/beleza" element={<Beleza />} />
           <Route path="/delivery" element={<Delivery />} />

@@ -206,10 +206,13 @@ function Telecomunicacao() {
               Dúvidas respondidas em instantes, detalhes e recomendações de pacotes de assinaturas e muito mais!
             </p>
             <div className="flex gap-4">
-              <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
-                Testar agora <ArrowRight className="w-5 h-5" />
-              </button>
+              <a href="#teste">
+                <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full text-[24px] text-black font-medium flex items-center gap-2 transition-colors">
+                  Testar agora <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
             </div>
+
           </div>
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
@@ -312,7 +315,7 @@ function Telecomunicacao() {
       </section>
 
       {/* Test AI Section */}
-     <section className="py-20 bg-gray-800/30">
+     <section id="teste" className="py-20 bg-gray-800/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
