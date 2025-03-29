@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Globe, MessageCircle, CalendarCheck, Calendar, ArrowRight} from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { CallTracker } from 'assert';
+import Head from 'next/head';
 
 const integrations = [
   { img: "/images/logo/Booking-Logo.png", name: "Booking.com", url: "https://www.Booking.com" },
@@ -21,162 +22,51 @@ const integrations = [
 ];
 
 function Turismo() {
-
-  // Novo estado para controlar o fluxo do formulário
-  const [formStep, setFormStep] = useState(1);
-  const [formData, setFormData] = useState({
-    question1: '',
-    question2: '',
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    preferredDate: '',
-    preferredTime: ''
-  });
-
-  const handleQuestionSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStep(formStep + 1);
-  };
-
-  const handleScheduleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você implementaria a lógica de envio do formulário completo
-    console.log('Dados completos do formulário:', formData);
-    alert('Agendamento recebido! Entraremos em contato em breve.');
-  };
-
-  // Renderiza o conteúdo do formulário baseado na etapa atual
- const renderFormStep = () => {
-  switch (formStep) {
-    case 1:
-      return (
-        <form onSubmit={handleQuestionSubmit} className="space-y-6">
-          <div>
-            <label className="block text-xl font-medium mb-4">
-              Qual é o maior desafio da sua empresa de turismo?
-            </label>
-            <textarea
-              required
-              rows={4}
-              className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={formData.question1}
-              onChange={(e) => setFormData({...formData, question1: e.target.value})}
-              placeholder="Exemplo: baixa taxa de conversão, dificuldades com marketing, falta de clientes recorrentes..."
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-          >
-            Próxima Pergunta <ArrowRight className="w-5 h-5" />
-          </button>
-        </form>
-      );
-    case 2:
-      return (
-        <form onSubmit={handleQuestionSubmit} className="space-y-6">
-          <div>
-            <label className="block text-xl font-medium mb-4">
-              Quantas viagens sua empresa vende por mês?
-            </label>
-            <input
-              type="number"
-              required
-              className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={formData.question2}
-              onChange={(e) => setFormData({...formData, question2: e.target.value})}
-              placeholder="Digite um número aproximado"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-          >
-            Próxima Pergunta <ArrowRight className="w-5 h-5" />
-          </button>
-        </form>
-      );
-    case 3:
-      return (
-        <form onSubmit={handleScheduleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium mb-2">Nome</label>
-              <input
-                type="text"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Email</label>
-              <input
-                type="email"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Telefone</label>
-              <input
-                type="tel"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Nome da Empresa</label>
-              <input
-                type="text"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.company}
-                onChange={(e) => setFormData({...formData, company: e.target.value})}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Data Preferida para uma Consultoria</label>
-              <input
-                type="date"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.preferredDate}
-                onChange={(e) => setFormData({...formData, preferredDate: e.target.value})}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Horário Preferido</label>
-              <input
-                type="time"
-                required
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.preferredTime}
-                onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
-              />
-            </div>
-          </div>
-          <button
-            type="submit"
-            className="w-full mt-6 bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-          >
-            Agendar Consultoria <Calendar className="w-5 h-5" />
-          </button>
-        </form>
-      );
-    default:
-      return null;
-  }
-};
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "//js.hsforms.net/forms/embed/v2.js";
+    script.charset = "utf-8";
+    script.type = "text/javascript";
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: "19489363",
+          formId: "462eb048-2fcf-4e56-a005-d71b03998b61",
+          region: "na1",
+          target: "#hubspotForm"
+        });
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
 
   return (
+    <>
+      <Head>
+        <title>JulIA para Academias - Atendimento Inteligente</title>
+        <meta name="description" content="Solução de IA para academias: atendimento automático, agendamentos e gestão de alunos" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+      </Head>
+
+      <style>
+          {`
+            html {
+              font-family: 'Roboto', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+              font-weight: 700;
+              line-height: 1.2;
+            }
+            body {
+              font-weight: 400;
+              line-height: 1.6;
+            }
+          `}
+        </style>
+
+
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Head Section */}
       <header className="container mx-auto px-4 py-8">
@@ -184,13 +74,13 @@ function Turismo() {
           <div className="flex items-center gap-2">
             <img className="w-32" src="/images/logo.png" alt="logo Julia" />
           </div>
-          <a
-            href="#cadastro"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
-            aria-label="Fale Conosco"
-          >
-            Fale Conosco
-          </a>
+            <a
+              href="#cadastro"
+              className="bg-[#25D366] hover:bg-[#075E54] rounded-lg text-white px-6 py-2 rounded-full font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              aria-label="Fale Conosco"
+            >
+              FALE CONOSCO
+            </a>
         </nav>
       </header>
 
@@ -207,9 +97,9 @@ function Turismo() {
             </p>
             <div className="flex gap-4">
               <a href="#teste">
-                <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full text-[24px] text-black font-medium flex items-center gap-2 transition-colors">
-                  Testar agora <ArrowRight className="w-5 h-5" />
-                </button>
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
               </a>
             </div>
           </div>
@@ -241,7 +131,7 @@ function Turismo() {
      <section className="py-20">
   <div className="container mx-auto px-4">
     <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-      Como a JulIA transforma o atendimento na sua agência de turismo
+      Soluções que a Julia oferece
     </h2>
     <div className="grid md:grid-cols-3 gap-8">
       {[
@@ -340,63 +230,37 @@ function Turismo() {
         </div>
       </section>
 
-      {/* Schedule Demo Section */}
-      <section id="cadastro" className="py-20 bg-gray-900/50">
-        <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Agende um bate-papo para saber mais
-          </h2>
-          <button
-            className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
-            onClick={() => window.open('https://share.hsforms.com/1ycW5NXA4QpK_fsRZvI-QPwblq37', '_blank')}
-          >
-            <Calendar className="w-5 h-5" /> Marcar reunião
-          </button>
+        {/* Form Section with Image */}
+          <section id="cadastro" className="py-20 bg-gray-900/50">
+            <div className="container mx-auto px-4">
+              {/* Título centralizado acima */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  Agende uma demonstração
+                </h2>
+              </div>
 
-
-          {/* <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-              Agende uma Demonstração
-            </h2>
-            <div className="bg-gray-800/50 rounded-2xl p-8"> */}
-              {/* Indicador de progresso */}
-              {/* <div className="flex justify-between mb-8">
-                <div className={`flex items-center ${formStep >= 1 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 1 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    1
-                  </div>
-                  <span className="ml-2 text-sm">Desafio</span>
+              {/* Container pai para alinhamento perfeito */}
+              <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 max-w-6xl mx-auto">
+                {/* Imagem - oculta em mobile */}
+                <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
+                  <img 
+                    src="images/julia_celular.png" 
+                    alt="App Julia no celular" 
+                    className="w-full h-full object-cover"
+                    style={{ minHeight: '400px' }}
+                  />
                 </div>
-                <div className={`flex items-center ${formStep >= 2 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 2 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    2
+                
+                {/* Formulário - mesma altura que a imagem */}
+                <div className="md:w-1/2">
+                  <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl h-full">
+                    <div id="hubspotForm"></div>
                   </div>
-                  <span className="ml-2 text-sm">Volume</span>
-                </div>
-                <div className={`flex items-center ${formStep >= 3 ? 'text-blue-500' : 'text-gray-500'}`}>
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                      formStep >= 3 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                    }`}
-                  >
-                    3
-                  </div>
-                  <span className="ml-2 text-sm">Dados</span>
                 </div>
               </div>
             </div>
-          </div> */}
-        </div>
-      </section>
-
+          </section>
 
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800">
@@ -417,6 +281,7 @@ function Turismo() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
 
