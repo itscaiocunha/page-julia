@@ -1,16 +1,106 @@
-import React, { useState } from 'react';
-import { Zap, Shield, MessageSquare, Calendar, ArrowRight} from 'lucide-react';
-import {
-  Database, Mail, FileText, 
-  CreditCard, MessageCircle
-} from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Zap, Shield, MessageSquare, Calendar, ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import Head from 'next/head';
 
-  const integrations = [
+// Tipos TypeScript
+type Integration = {
+  img: string;
+  name: string;
+  url: string;
+};
+
+type PainPoint = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+// Componente de Ícone de Rede Social
+const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-blue-400 transition-colors duration-200"
+    aria-label={`Link para ${children}`}
+  >
+    {children}
+  </a>
+);
+
+// Componente de Ponto de Dor
+const PainPointCard: React.FC<PainPoint> = ({ icon, title, description }) => (
+  <div className="bg-gray-800/50 p-8 rounded-2xl hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg">
+    <div className="mb-4" aria-hidden="true">{icon}</div>
+    <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+    <p className="text-gray-400 leading-relaxed">{description}</p>
+  </div>
+);
+
+// Componente de Integração
+const IntegrationCard: React.FC<Integration> = ({ img, name, url }) => (
+  <SwiperSlide key={name}>
+    <a 
+      href={url} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="flex flex-col items-center group"
+      aria-label={`Integração com ${name}`}
+    >
+      <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mb-3 group-hover:border-blue-500 border-2 border-transparent transition-all duration-300 hover:shadow-md">
+        <img 
+          src={img} 
+          alt={name} 
+          className="w-24 h-24 object-contain p-2" 
+          loading="lazy"
+        />
+      </div>
+      <span className="text-sm text-gray-400 group-hover:text-blue-500 transition-colors duration-200">{name}</span>
+    </a>
+  </SwiperSlide>
+);
+
+const Ecommerce: React.FC = () => {
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "//js.hsforms.net/forms/embed/v2.js";
+    script.charset = "utf-8";
+    script.type = "text/javascript";
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: "19489363",
+          formId: "43d372b2-91f1-47c1-8cde-0eefc3ad1d52",
+          region: "na1",
+          target: "#hubspotForm"
+        });
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
+
+  const painPoints: PainPoint[] = [
+    {
+      icon: <MessageSquare className="w-8 h-8 text-red-400" />,
+      title: "Vendas 24/7",
+      description: "Perca zero oportunidades de venda! A JulIA atende, qualifica e vende 24 horas por dia, 7 dias por semana."
+    },
+    {
+      icon: <Zap className="w-8 h-8 text-yellow-400" />,
+      title: "Conversão Instantânea",
+      description: "Aumente suas taxas de conversão com atendimento instantâneo e recomendações personalizadas."
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-green-400" />,
+      title: "Vendas Qualificadas",
+      description: "Cada interação é uma oportunidade de venda. A JulIA qualifica leads e fecha negócios automaticamente."
+    }
+  ];
+
+  const integrations: Integration[] = [
     { img: "/images/logo/Shopify-Logo.png", name: "Shopify", url: "https://www.shopify.com.br/" },
     { img: "/images/logo/Nuvemshop-Logo.png", name: "Nuvemshop", url: "https://www.nuvemshop.com.br/" },
     { img: "/images/logo/HubSpot-Logo.png", name: "HubSpot", url: "https://www.hubspot.com/" },
@@ -23,272 +113,141 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
     { img: "/images/logo/Bitrix-Logo.png", name: "Bitrix24", url: "https://www.bitrix24.com.br/" }
   ];
 
-
-function Ecommerce() {
-  // Novo estado para controlar o fluxo do formulário
-  const [formStep, setFormStep] = useState(1);
-  const [formData, setFormData] = useState({
-    question1: '',
-    question2: '',
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    preferredDate: '',
-    preferredTime: ''
-  });
-
-  const handleQuestionSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Avança para próxima etapa
-    setFormStep(formStep + 1);
-  };
-
-  const handleScheduleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você implementaria a lógica de envio do formulário completo
-    console.log('Dados completos do formulário:', formData);
-    alert('Agendamento recebido! Entraremos em contato em breve.');
-  };
-
-  // Renderiza o conteúdo do formulário baseado na etapa atual
-  const renderFormStep = () => {
-    switch (formStep) {
-      case 1:
-        return (
-          <form onSubmit={handleQuestionSubmit} className="space-y-6">
-            <div>
-              <label className="block text-xl font-medium mb-4">
-                Qual é o seu maior desafio em converter visitantes em clientes?
-              </label>
-              <textarea
-                required
-                rows={4}
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.question1}
-                onChange={(e) => setFormData({...formData, question1: e.target.value})}
-                placeholder="Descreva seu desafio em vendas"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-            >
-              Próxima Pergunta <ArrowRight className="w-5 h-5" />
-            </button>
-          </form>
-        );
-      case 2:
-        return (
-          <form onSubmit={handleQuestionSubmit} className="space-y-6">
-            <div>
-              <label className="block text-xl font-medium mb-4">
-                Quantas vendas seu e-commerce realiza mensalmente?
-              </label>
-              <textarea
-                required
-                rows={4}
-                className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={formData.question2}
-                onChange={(e) => setFormData({...formData, question2: e.target.value})}
-                placeholder="Descreva o volume de vendas..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-            >
-              Continuar para Agendamento <ArrowRight className="w-5 h-5" />
-            </button>
-          </form>
-        );
-      case 3:
-        return (
-          <form onSubmit={handleScheduleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Nome</label>
-                <input
-                  type="text"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Telefone</label>
-                <input
-                  type="tel"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Empresa</label>
-                <input
-                  type="text"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Data Preferida</label>
-                <input
-                  type="date"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.preferredDate}
-                  onChange={(e) => setFormData({...formData, preferredDate: e.target.value})}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Horário Preferido</label>
-                <input
-                  type="time"
-                  required
-                  className="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={formData.preferredTime}
-                  onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
-                />
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="w-full mt-6 bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-            >
-              Agendar Demonstração
-              <Calendar className="w-5 h-5" />
-            </button>
-          </form>
-        );
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
-      {/* Head Section */}
-      <header className="container mx-auto px-4 py-8">
-        <nav className="flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <img className="w-32" src="/images/logo.png" alt="logo Julia" />
-          </div>
-          <a
-            href="#cadastro"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
-            aria-label="Fale Conosco"
-          >
-            Fale Conosco
-          </a>
-        </nav>
-      </header>
+    <>
+      <Head>
+        <title>JulIA - Solução de E-commerce com IA</title>
+        <meta name="description" content="Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente com JulIA" />
+        <meta name="keywords" content="e-commerce, chatbot, IA, vendas, atendimento automático" />
+        <meta property="og:title" content="JulIA - Solução de E-commerce com IA" />
+        <meta property="og:description" content="Experiência personalizada e o fim do abandono de carrinho!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.hellojulia.com.br/ecommerce" />
+        <meta property="og:image" content="/images/og-image.jpg" />
+        <link rel="canonical" href="https://www.hellojulia.com.br/ecommerce" />
+        
+        {/* Fontes Roboto */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+      </Head>
 
+        <style>
+          {`
+            html {
+              font-family: 'Roboto', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+              font-weight: 700;
+              line-height: 1.2;
+            }
+            body {
+              font-weight: 400;
+              line-height: 1.6;
+            }
+          `}
+        </style>
 
-      {/* CTA + WhatsApp Demo Section */}
-     <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#892CDB] to-white text-transparent bg-clip-text">
-              Experiência personalizada e o fim do abandono de carrinho!
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente.
-            </p>
-            <div className="flex gap-4">
-              <a href="#teste">
-                <button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full text-[24px] text-black font-medium flex items-center gap-2 transition-colors">
-                  Testar agora <ArrowRight className="w-5 h-5" />
-                </button>
-              </a>
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+        {/* Header Section */}
+        <header className="container mx-auto px-4 py-8">
+          <nav className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <img 
+                className="w-32" 
+                src="/images/logo.png" 
+                alt="Logo JulIA" 
+                width={128}
+                height={40}
+                loading="eager"
+              />
+            </div>
+            <a
+              href="#cadastro"
+              className="bg-[#25D366] hover:bg-[#075E54] rounded-lg text-white px-6 py-2 rounded-full font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              aria-label="Fale Conosco"
+            >
+              FALE CONOSCO
+            </a>
+          </nav>
+        </header>
+
+        <main>
+          {/* Hero Section */}
+          <section className="container mx-auto px-4 py-16 md:py-24">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#892CDB] to-white text-transparent bg-clip-text leading-tight">
+                  Experiência personalizada e o fim do abandono de carrinho!
+                </h1>
+                <p className="text-xl text-gray-300 mb-8 max-w-lg">
+                  Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente.
+                </p>
+                <div className="flex gap-4">
+                  <a href="#teste">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div className="relative flex justify-center">
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
+                <img 
+                  className="w-full max-w-[800px] rounded-lg shadow-xl" 
+                  src="/images/Ecommerce.png" 
+                  alt="Demonstração do chat do E-commerce" 
+                  width={800}
+                  height={600}
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Video Section */}
+          <section className="py-20 bg-gray-900/50">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a Julia pode aumentar suas vendas</h2>
+              <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800 shadow-2xl">
+                <iframe
+                  className="w-full h-full"
+                  src="https://w7startup.com.br/video/Ecommerce.mp4"
+                  title="Demonstração Julia para E-commerce"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          {/* Pain Points Section */}
+          <section className="py-20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+                Soluções que a Julia oferece
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-justify">
+                {painPoints.map((pain, index) => (
+                  <PainPointCard key={index} {...pain} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Integrations Section */}
+          <section className="container mx-auto px-4 py-16 border-t border-gray-800">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Integrações Poderosas</h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Nossa plataforma se integra perfeitamente com as  <br/> principais ferramentas do mercado
+              </p>
             </div>
 
-          </div>
-          <div className="relative flex justify-center">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-[800px]" src="/images/Ecommerce.png" alt="Conversa do WhatsApp" />
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-20 bg-gray-900/50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a JulIA aumenta suas vendas</h2>
-          <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
-            <iframe
-              className="w-full h-full"
-              src="https://w7startup.com.br/video/Ecommerce.mp4"
-              title="JulIA Demo"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Points Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Problemas que a JulIA resolve
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <MessageSquare className="w-8 h-8 text-red-400" />,
-                title: "Vendas 24/7",
-                description: "Perca zero oportunidades de venda! A JulIA atende, qualifica e vende 24 horas por dia, 7 dias por semana."
-              },
-              {
-                icon: <Zap className="w-8 h-8 text-yellow-400" />,
-                title: "Conversão Instantânea",
-                description: "Aumente suas taxas de conversão com atendimento instantâneo e recomendações personalizadas."
-              },
-              {
-                icon: <Shield className="w-8 h-8 text-green-400" />,
-                title: "Vendas Qualificadas",
-                description: "Cada interação é uma oportunidade de venda. A JulIA qualifica leads e fecha negócios automaticamente."
-              }
-            ].map((pain, index) => (
-              <div key={index} className="bg-gray-800/50 p-8 rounded-2xl hover:transform hover:-translate-y-1 transition-all">
-                <div className="mb-4">{pain.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{pain.title}</h3>
-                <p className="text-gray-400">{pain.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integrations Section */}
-      <section className="container mx-auto px-4 py-16 border-t border-gray-800">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Integrações Poderosas</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Nossa plataforma se integra perfeitamente com as principais ferramentas do mercado
-          </p>
-        </div>
-
-        {/* Carrossel Swiper */}
-        <Swiper
+            {/* Carrossel Swiper */}
+            <Swiper
           slidesPerView={2}
           spaceBetween={20}
           loop={true} // Ativando rotação infinita
@@ -297,8 +256,8 @@ function Ecommerce() {
             768: { slidesPerView: 4 },
             1024: { slidesPerView: 6 },
           }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // Mantendo autoplay
-          modules={[Autoplay]} // Removendo paginação e navegação
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          modules={[Autoplay]}
           className="mb-12"
         >
           {integrations.map(({ img, name, url }) => (
@@ -313,116 +272,101 @@ function Ecommerce() {
           ))}
         </Swiper>
 
+            <h3 className="text-3xl font-bold mb-4 text-center mt-8">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
+            </h3>
+          </section>
 
-        {/* Contador de integrações */}
-        <h3 className="text-3xl font-bold mb-4 text-center">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">+ 500</span> integrações
-        </h3>
-      </section>
-
-      {/* Test AI Section */}
-     <section id="teste" className="py-20 bg-gray-800/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Experimente a JulIA agora mesmo
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              Teste nossa IA e veja como ela pode revolucionar seu atendimento
-            </p>
-            <div className="overflow-hidden rounded-2xl border border-gray-300">
-              <iframe 
-                id="zaia-iframe" 
-                src="https://platform.zaia.app/embed/chat/17834"
-                className="w-full h-80"
-                style={{ border: "none" }}
-              ></iframe>
-            </div>
-            <p className="text-lg text-gray-400 mt-4">
-              Esta é uma versão de demonstração. Para acesso completo, agende uma demonstração abaixo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Schedule Demo Section */}
-            <section id="cadastro" className="py-20 bg-gray-900/50">
-              <div className="container mx-auto px-4 flex flex-col items-center text-center">
+          {/* Test AI Section */}
+          <section id="teste" className="py-20 bg-gray-800/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Agende um bate-papo para saber mais
+                  Experimente a Julia agora mesmo
                 </h2>
-                <button
-                  className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
-                  onClick={() => window.open('https://share.hsforms.com/1Q9NyspHxR8GM3g7vw60dUgblq37', '_blank')}
-                >
-                  <Calendar className="w-5 h-5" /> Marcar reunião
-                </button>
-      
-      
-                {/* <div className="max-w-2xl mx-auto">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-                    Agende uma Demonstração
-                  </h2>
-                  <div className="bg-gray-800/50 rounded-2xl p-8"> */}
-                    {/* Indicador de progresso */}
-                    {/* <div className="flex justify-between mb-8">
-                      <div className={`flex items-center ${formStep >= 1 ? 'text-blue-500' : 'text-gray-500'}`}>
-                        <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                            formStep >= 1 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                          }`}
-                        >
-                          1
-                        </div>
-                        <span className="ml-2 text-sm">Desafio</span>
-                      </div>
-                      <div className={`flex items-center ${formStep >= 2 ? 'text-blue-500' : 'text-gray-500'}`}>
-                        <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                            formStep >= 2 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                          }`}
-                        >
-                          2
-                        </div>
-                        <span className="ml-2 text-sm">Volume</span>
-                      </div>
-                      <div className={`flex items-center ${formStep >= 3 ? 'text-blue-500' : 'text-gray-500'}`}>
-                        <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                            formStep >= 3 ? 'border-blue-500 bg-blue-500/20' : 'border-gray-500'
-                          }`}
-                        >
-                          3
-                        </div>
-                        <span className="ml-2 text-sm">Dados</span>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+                <p className="text-xl text-gray-300 mb-12">
+                  Teste nossa IA e veja como ela pode revolucionar seu atendimento
+                </p>
+                <div className="overflow-hidden rounded-2xl border border-gray-300 shadow-xl">
+                  <iframe 
+                    id="zaia-iframe" 
+                    src="https://platform.zaia.app/embed/chat/17834"
+                    className="w-full h-80"
+                    style={{ border: "none" }}
+                    title="Demonstração do Chat Julia"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <p className="text-lg text-gray-400 mt-4">
+                  Esta é uma versão de demonstração. Para acesso completo, agende uma demonstração abaixo.
+                </p>
               </div>
-            </section>
-
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <img className="w-32" src="/images/logo.png" alt="logo Julia" />
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> | 
-              <a href="https://www.linkedin.com/company/hellojulia/">Linkedin</a> |
-              <a href="mailto:ola@hellojulia.com.br">E-mail</a>
+          </section>
+
+          {/* Schedule Demo Section */}
+          <section id="cadastro" className="py-20 bg-gray-900/50">
+            <div className="container mx-auto px-4">
+              {/* Título centralizado acima */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  Agende uma demonstração
+                </h2>
+              </div>
+
+              {/* Container pai para alinhamento perfeito */}
+              <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 max-w-6xl mx-auto">
+                {/* Imagem - oculta em mobile */}
+                <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
+                  <img 
+                    src="images/julia_celular.png" 
+                    alt="App Julia no celular" 
+                    className="w-full h-full object-cover"
+                    style={{ minHeight: '400px' }}
+                  />
+                </div>
+                
+                {/* Formulário - mesma altura que a imagem */}
+                <div className="md:w-1/2">
+                  <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl h-full">
+                    <div id="hubspotForm" className="h-full"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-400 text-sm">
-              © 2025 JulIA. Todos os direitos reservados.
-            </p>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="py-12 border-t border-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <img 
+                  className="w-32" 
+                  src="/images/logo.png" 
+                  alt="Logo Julia" 
+                  width={128}
+                  height={40}
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex items-center gap-4 text-gray-400">
+                <SocialLink href="https://www.instagram.com/hello.juliabr/">Instagram</SocialLink>
+                <span>|</span>
+                <SocialLink href="https://www.linkedin.com/company/hellojulia/">Linkedin</SocialLink>
+                <span>|</span>
+                <SocialLink href="mailto:ola@hellojulia.com.br">E-mail</SocialLink>
+              </div>
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Julia. Todos os direitos reservados.
+              </p>
+            </div>
           </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </>
   );
-}
+};
 
 export default Ecommerce;

@@ -23,11 +23,11 @@ const Navbar = () => {
           </a>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#ourhome" className="text-gray-700 hover:text-julia-blue transition-colors">O Que É?</a>
-            <a href="#experiencia" className="text-gray-700 hover:text-julia-blue transition-colors">Teste Agora</a>
-            <a href="#video" className="text-gray-700 hover:text-julia-blue transition-colors">Nossa Solução</a>
+            <a href="#ourhome" className="text-gray-700 hover:text-julia-blue transition-colors">O que é?</a>
+            <a href="#experiencia" className="text-gray-700 hover:text-julia-blue transition-colors">Teste agora</a>
+            <a href="#video" className="text-gray-700 hover:text-julia-blue transition-colors">Nossa solução</a>
             <a href="#clients" className="text-gray-700 hover:text-julia-blue transition-colors">Clientes</a>
-            <a href="#our-pricings" className="text-gray-700 hover:text-julia-blue transition-colors">Nossos Planos</a>
+            <a href="#our-pricings" className="text-gray-700 hover:text-julia-blue transition-colors">Nossos planos</a>
           </div>
         </div>
       </nav>

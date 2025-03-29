@@ -223,13 +223,13 @@ const Pricing = () => {
               
               <a
                 href={plan.link}
-                className={`block text-center py-3 rounded-lg transition-transform hover:scale-105 ${
+                className={`block text-center py-3 rounded-lg transition-transform hover:scale-105 font-bold ${
                   plan.featured
                     ? 'bg-white text-julia-blue'
-                    : 'bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white'
+                    : 'bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white font-bold'
                 }`}
               >
-                ESCOLHER
+                TESTE 7 DIAS GRATIS
               </a>
               
               <p className="text-sm text-center mt-4 opacity-75">

@@ -15,9 +15,9 @@ const VideoSection = () => {
           <div className="flex justify-center">
               <video 
                 controls 
-                className="w-full h-auto mx-auto"
+                className="w-full h-auto mx-auto rounded-xl"
               >
-                <source src="/videos/Responda_1.mp4" type="video/mp4" />
+                <source src="/videos/Responda_1.mp4" type="video/mp4" className="" />
               </video>
           </div>
         </div>
