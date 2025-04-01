@@ -42,7 +42,7 @@ function Academia() {
   return (
     <>
       <Head>
-        <title>JulIA para Academias - Atendimento Inteligente</title>
+        <title>Julia para Academias - Atendimento Inteligente</title>
         <meta name="description" content="Solução de IA para academias: atendimento automático, agendamentos e gestão de alunos" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

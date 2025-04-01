@@ -183,10 +183,15 @@ const Ecommerce: React.FC = () => {
                 <p className="text-xl text-gray-300 mb-8 max-w-lg">
                   Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#teste">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                       TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                  <a href="#cadastro">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -220,6 +225,11 @@ const Ecommerce: React.FC = () => {
                   loading="lazy"
                 ></iframe>
               </div>
+                            <a href="#teste">
+                <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
             </div>
           </section>
 

@@ -42,7 +42,7 @@ function Beleza() {
   return (
     <>
       <Head>
-        <title>JulIA para Salões de Beleza - Atendimento Inteligente</title>
+        <title>Julia para Salões de Beleza - Atendimento Inteligente</title>
         <meta name="description" content="Solução de IA para salões de beleza: agendamentos, atendimento e fidelização de clientes" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -93,10 +93,15 @@ function Beleza() {
                 <p className="text-xl text-gray-300 mb-8">
                   Mais venda e alcance para a sua marca com um atendimento personalizado e detalhado!
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#teste">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                       TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                  <a href="#cadastro">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -110,7 +115,7 @@ function Beleza() {
           {/* Video Section */}
           <section className="py-20 bg-gray-900/50">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a JulIA aumenta suas vendas</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a Julia aumenta suas vendas</h2>
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
                 <iframe
                   className="w-full h-full"
@@ -120,6 +125,11 @@ function Beleza() {
                   allowFullScreen
                 ></iframe>
               </div>
+              <a href="#teste">
+                <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
             </div>
           </section>
 
@@ -201,7 +211,7 @@ function Beleza() {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Experimente a JulIA agora mesmo
+                  Experimente a Julia agora mesmo
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
                   Teste nossa IA e veja como ela pode revolucionar seu atendimento
@@ -266,7 +276,7 @@ function Beleza() {
                 <a href="mailto:ola@hellojulia.com.br" className="hover:text-blue-400 transition-colors">E-mail</a>
               </div>
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} JulIA. Todos os direitos reservados.
+                © {new Date().getFullYear()} Julia. Todos os direitos reservados.
               </p>
             </div>
           </div>

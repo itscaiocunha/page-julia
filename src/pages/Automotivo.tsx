@@ -30,7 +30,7 @@ function Automobilismo() {
           if (window.hbspt) {
             window.hbspt.forms.create({
               portalId: "19489363",
-              formId: "0829d27c-113d-4965-ae94-852cf1c6c3b0",
+              formId: "0668bdb2-43f9-4832-bd58-d976ccf933d5",
               region: "na1",
               target: "#hubspotForm"
             });
@@ -42,7 +42,7 @@ function Automobilismo() {
   return (
     <>
       <Head>
-        <title>JulIA para Estacionamentos - Gestão Automatizada</title>
+        <title>Julia para Estacionamentos - Gestão Automatizada</title>
         <meta name="description" content="Solução de IA para estacionamentos: controle de vagas, reservas e atendimento automático" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -93,10 +93,15 @@ function Automobilismo() {
                 <p className="text-xl text-gray-300 mb-8">
                   Automatize reservas, controle o fluxo de veículos e melhore a experiência dos seus clientes com nossa IA especializada.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#teste">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                       TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                  <a href="#cadastro">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -110,7 +115,7 @@ function Automobilismo() {
           {/* Video Section */}
           <section className="py-20 bg-gray-900/50">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a JulIA aumenta suas vendas</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a Julia aumenta suas vendas</h2>
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
                 <iframe
                   className="w-full h-full"
@@ -120,6 +125,11 @@ function Automobilismo() {
                   allowFullScreen
                 ></iframe>
               </div>
+              <a href="#teste">
+                <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
             </div>
           </section>
 
@@ -201,7 +211,7 @@ function Automobilismo() {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Experimente a JulIA agora mesmo
+                  Experimente a Julia agora mesmo
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
                   Teste nossa IA e veja como ela pode revolucionar seu atendimento
@@ -211,7 +221,7 @@ function Automobilismo() {
                     src="https://platform.zaia.app/embed/chat/17834"
                     className="w-full h-80"
                     style={{ border: "none" }}
-                    title="Demonstração do Chat JulIA"
+                    title="Demonstração do Chat Julia"
                   ></iframe>
                 </div>
               </div>
@@ -266,7 +276,7 @@ function Automobilismo() {
                 <a href="mailto:ola@hellojulia.com.br" className="hover:text-blue-400 transition-colors">E-mail</a>
               </div>
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} JulIA. Todos os direitos reservados.
+                © {new Date().getFullYear()} Julia. Todos os direitos reservados.
               </p>
             </div>
           </div>

@@ -30,7 +30,7 @@ function Delivery() {
       if (window.hbspt) {
         window.hbspt.forms.create({
           portalId: "19489363",
-          formId: "d9c0b0bf-4da4-4943-8404-f6987c945860",
+          formId: "f17fca6f-c750-4639-849a-fd29020318b4",
           region: "na1",
           target: "#hubspotForm"
         });
@@ -42,7 +42,7 @@ function Delivery() {
   return (
     <>
       <Head>
-        <title>JulIA para Restaurantes - Atendimento Inteligente</title>
+        <title>Julia para Restaurantes - Atendimento Inteligente</title>
         <meta name="description" content="Solução de IA para restaurantes: atendimento automático, gestão de pedidos e integração com plataformas de delivery" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -93,10 +93,15 @@ function Delivery() {
                 <p className="text-xl text-gray-300 mb-8">
                   Pedidos concluídos com agilidade, respostas imediatas e detalhadas! Aumente seu faturamento e libere o fluxo de atendimentos do seu restaurante.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#teste">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                       TESTE AGORA <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                  <a href="#cadastro">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -110,7 +115,7 @@ function Delivery() {
           {/* Video Section */}
           <section className="py-20 bg-gray-900/50">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a JulIA aumenta suas vendas</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a Julia aumenta suas vendas</h2>
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
                 <iframe
                   className="w-full h-full"
@@ -120,6 +125,11 @@ function Delivery() {
                   allowFullScreen
                 ></iframe>
               </div>
+              <a href="#teste">
+                <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
             </div>
           </section>
 
@@ -201,7 +211,7 @@ function Delivery() {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Experimente a JulIA agora mesmo
+                  Experimente a Julia agora mesmo
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
                   Teste nossa IA e veja como ela pode revolucionar seu atendimento
@@ -266,7 +276,7 @@ function Delivery() {
                 <a href="mailto:ola@hellojulia.com.br" className="hover:text-blue-400 transition-colors">E-mail</a>
               </div>
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} JulIA. Todos os direitos reservados.
+                © {new Date().getFullYear()} Julia. Todos os direitos reservados.
               </p>
             </div>
           </div>

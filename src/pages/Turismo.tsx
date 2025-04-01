@@ -8,6 +8,18 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { CallTracker } from 'assert';
 import Head from 'next/head';
 
+const SocialLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-blue-400 transition-colors duration-200"
+    aria-label={`Link para ${children}`}
+  >
+    {children}
+  </a>
+);
+
 const integrations = [
   { img: "/images/logo/Booking-Logo.png", name: "Booking.com", url: "https://www.Booking.com" },
   { img: "/images/logo/GoogleMaps-Logo.png", name: "Google Maps", url: "https://www.google.com.br/maps" },
@@ -31,7 +43,7 @@ function Turismo() {
       if (window.hbspt) {
         window.hbspt.forms.create({
           portalId: "19489363",
-          formId: "462eb048-2fcf-4e56-a005-d71b03998b61",
+          formId: "c9c5b935-7038-4292-bf7e-c459bc8f903f",
           region: "na1",
           target: "#hubspotForm"
         });
@@ -43,7 +55,7 @@ function Turismo() {
   return (
     <>
       <Head>
-        <title>JulIA para Academias - Atendimento Inteligente</title>
+        <title>Julia para Academias - Atendimento Inteligente</title>
         <meta name="description" content="Solução de IA para academias: atendimento automático, agendamentos e gestão de alunos" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -95,13 +107,18 @@ function Turismo() {
             <p className="text-xl text-gray-300 mb-8">
               Todos os detalhes, recomendações de pacotes e muito mais 24 horas por dia! 
             </p>
-            <div className="flex gap-4">
-              <a href="#teste">
+            <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="#teste">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                       TESTE AGORA <ArrowRight className="w-5 h-5" />
                     </button>
-              </a>
-            </div>
+                  </a>
+                  <a href="#cadastro">
+                    <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </a>
+                </div>
           </div>
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
@@ -114,7 +131,7 @@ function Turismo() {
       {/* Video Section */}
       <section className="py-20 bg-gray-900/50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a JulIA aumenta suas vendas</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Veja como a Julia aumenta suas vendas</h2>
           <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
             <iframe
               className="w-full h-full"
@@ -124,6 +141,11 @@ function Turismo() {
               allowFullScreen
             ></iframe>
           </div>
+          <a href="#teste">
+                <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                </button>
+              </a>
         </div>
       </section>
 
@@ -210,7 +232,7 @@ function Turismo() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Experimente a JulIA agora mesmo
+              Experimente a Julia agora mesmo
             </h2>
             <p className="text-xl text-gray-300 mb-12">
               Teste nossa IA e veja como ela pode revolucionar seu atendimento
@@ -264,22 +286,31 @@ function Turismo() {
 
       {/* Footer */}
       <footer className="py-12 border-t border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <img className="w-32" src="/images/logo.png" alt="logo Julia" />
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <img 
+                  className="w-32" 
+                  src="/images/logo.png" 
+                  alt="Logo Julia" 
+                  width={128}
+                  height={40}
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex items-center gap-4 text-gray-400">
+                <SocialLink href="https://www.instagram.com/hello.juliabr/">Instagram</SocialLink>
+                <span>|</span>
+                <SocialLink href="https://www.linkedin.com/company/hellojulia/">Linkedin</SocialLink>
+                <span>|</span>
+                <SocialLink href="mailto:ola@hellojulia.com.br">E-mail</SocialLink>
+              </div>
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Julia. Todos os direitos reservados.
+              </p>
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> | 
-              <a href="https://www.linkedin.com/company/hellojulia/">Linkedin</a> |
-              <a href="mailto:ola@hellojulia.com.br">E-mail</a>
-            </div>
-            <p className="text-gray-400 text-sm">
-              © 2025 JulIA. Todos os direitos reservados.
-            </p>
           </div>
-        </div>
-      </footer>
+        </footer>
     </div>
     </>
   );
