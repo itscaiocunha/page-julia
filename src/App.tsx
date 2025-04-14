@@ -5,14 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Ecommerce from "./pages/Ecommerce";
-import Saude from "./pages/Saude";
-import Beleza from "./pages/Beleza";
-import Delivery from "./pages/Delivery";
-import Academia from "./pages/Academia";
-import Automobilismo from "./pages/Automotivo";
-import Turismo from "./pages/Turismo";
-import Telecomunicacao from "./pages/Telecomunicacao";
+import Ecommerce from "./pages/landing/Ecommerce";
+import Saude from "./pages/landing/Saude";
+import Beleza from "./pages/landing/Beleza";
+import Delivery from "./pages/landing/Delivery";
+import Academia from "./pages/landing/Academia";
+import Automobilismo from "./pages/landing/Automotivo";
+import Turismo from "./pages/landing/Turismo";
+import Telecomunicacao from "./pages/landing/Telecomunicacao";
+import Summit from "./pages/landing/Summit";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/automotivo" element={<Automobilismo />} />
           <Route path="/turismo" element={<Turismo />} />
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
+          <Route path="/summit" element={<Summit />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
