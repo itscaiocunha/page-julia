@@ -288,7 +288,7 @@ const Summit = () => {
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-2">
                 <iframe 
                   id="zaia-iframe"
-                  src="https://platform.zaia.app/embed/chat/17834"
+                  src="https://platform.zaia.app/embed/chat/44982"
                   className="w-full h-[400px] rounded-lg border border-white/20"
                 />
               </div>
