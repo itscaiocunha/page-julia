@@ -34,6 +34,21 @@ const App = () => (
           <Route path="/turismo" element={<Turismo />} />
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
           <Route path="/summit" element={<Summit />} />
+          {/* Nova rota para a política de privacidade */}
+          <Route 
+            path="/privacidade" 
+            element={
+              <div style={{ height: '100vh' }}>
+                <iframe 
+                  src="/politica-privacidade-julia.html" 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0"
+                  title="Política de Privacidade"
+                />
+              </div>
+            } 
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
