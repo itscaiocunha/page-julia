@@ -213,9 +213,15 @@ const Summit = () => {
       }`}>
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <a href="#" className="flex items-center">
-              <img src="/images/julia-name.png" alt="Julia" className="h-12 w-auto" />
-            </a>
+            <div className="flex items-center gap-[30px]"> {/* Espaço fixo de 30px */}
+              <a href="#" className="flex items-center">
+                <img src="/images/julia-name.png" alt="Julia" className="h-8 sm:h-12 w-auto" /> {/* Altura menor em mobile */}
+              </a>
+
+              <a href="https://rio.websummit.com/" target="_blank" className="flex items-center">
+                <img src="/images/logo_websummit.png" alt="" className="h-6 sm:h-8 w-auto" /> {/* Altura menor em mobile */}
+              </a>
+            </div>
             
             <div className="hidden md:flex items-center space-x-8">
               <a href="#ourhome" className="text-gray-700 hover:text-julia-blue transition-colors">What is it?</a>
