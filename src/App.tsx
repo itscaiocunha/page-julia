@@ -14,6 +14,7 @@ import Automobilismo from "./pages/landing/Automotivo";
 import Turismo from "./pages/landing/Turismo";
 import Telecomunicacao from "./pages/landing/Telecomunicacao";
 import Summit from "./pages/landing/Summit";
+import LeadCapture from "./pages/landing/Captacao";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,7 @@ const App = () => (
           <Route path="/turismo" element={<Turismo />} />
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
           <Route path="/summit" element={<Summit />} />
-          {/* Nova rota para a política de privacidade */}
+          <Route path="/captacao" element={<LeadCapture />} />
           <Route 
             path="/privacidade" 
             element={
