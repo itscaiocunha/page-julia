@@ -33,39 +33,50 @@ const LeadCapture = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
+  
     if (!niche) {
       setError("Please select a niche");
       return;
     }
-
+  
     if (!validatePhone(phone)) {
       setError("Please enter a valid phone number");
       return;
     }
-
+  
     setIsLoading(true);
-
+  
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      console.log("Submitted:", { phone, niche });
+      const response = await fetch("api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          phoneNumber: phone,
+          niche,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to submit data.");
+      }
+  
       setSubmitted(true);
-      toast.success("Form submitted successfully!");
-      
+  
       setTimeout(() => {
         setPhone("");
         setNiche("");
         setSubmitted(false);
-      }, 3000);
+      }, 10000);
     } catch (err) {
-      toast.error("Failed to submit form. Please try again.");
-      console.error("Submission error:", err);
+      console.error("Error to send:", err);
+      toast.error("Erro to send forms.");
     } finally {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4">
