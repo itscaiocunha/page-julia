@@ -45,7 +45,9 @@ const Summit = () => {
   const clients = [
     { name: 'Chevrolet', logo: '/images/Chevrolet-Logo.png', url: '#' },
     { name: 'ArtErvas', logo: '/images/Shantui-Logo.png', url: '#' },
+    { name: 'Falcão das Milhas', logo: '/images/Falcao-Logo.png', url: '#' },
     { name: 'Banuba', logo: '/images/Banuba-Logo.png', url: '#' },
+    { name: 'Thai Valle', logo: '/images/Thai-Logo.png', url: '#' },
     { name: 'Yamadiesel', logo: '/images/Yamadiesel-Logo.png', url: '#' },
     { name: 'Wehandle', logo: '/images/Wehandle-logo.png', url: '#' },
     { name: 'IcoBatatas', logo: '/images/IcoBatatas-Logo.png', url: '#' },
