@@ -385,7 +385,7 @@ const Summit = () => {
                     controls 
                     className="w-full h-auto mx-auto rounded-xl"
                   >
-                    <source src="/videos/Responda_1.mp4" type="video/mp4" className="" />
+                    <source src="/videos/julia_video.mp4" type="video/mp4" className="" />
                   </video>
               </div>
             </div>
