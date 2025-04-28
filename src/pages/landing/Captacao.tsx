@@ -20,6 +20,7 @@ import 'react-phone-input-2/lib/style.css';
 import { toast } from "sonner";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { useNavigate } from 'react-router-dom';
 
 const LeadCapture = () => {
   const [phone, setPhone] = useState("");
@@ -28,6 +29,7 @@ const LeadCapture = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const validatePhone = (phoneNumber: string) => {
     return phoneNumber.length >= 10;
@@ -36,19 +38,19 @@ const LeadCapture = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-  
+
     if (!niche) {
       setError("Please select a niche");
       return;
     }
-  
+
     if (!validatePhone(phone)) {
       setError("Please enter a valid phone number");
       return;
     }
-  
+
     setIsLoading(true);
-  
+
     try {
       const response = await fetch("api/lead", {
         method: "POST",
@@ -57,22 +59,18 @@ const LeadCapture = () => {
         },
         body: JSON.stringify({
           phoneNumber: phone,
-          niche,
-          plan,
+          niche
         }),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to submit data.");
       }
-  
+
       setSubmitted(true);
-  
-      setTimeout(() => {
-        setPhone("");
-        setNiche("");
-        setSubmitted(false);
-      }, 10000);
+
+      navigate('/pay');
+
     } catch (err) {
       console.error("Error to send:", err);
       toast.error("Erro to send forms.");
