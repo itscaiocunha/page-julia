@@ -124,7 +124,7 @@ const Pay = () => {
                     <div className="w-full">
                       <div className="font-semibold">Premium</div>
                       <div className="text-sm">US$119,17/month</div>
-                      <p className="text-[11px] text-gray-500">R$675,00/month</p>
+                      <p className="text-[11px] text-gray-500 ">R$675,00/month</p>
                       <div className="text-xs text-green-600 mt-1">More features</div>
                     </div>
                   </Label>
