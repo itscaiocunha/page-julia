@@ -18,10 +18,13 @@ import { SendIcon, Loader2, CheckCircle2 } from "lucide-react";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { toast } from "sonner";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 const LeadCapture = () => {
   const [phone, setPhone] = useState("");
   const [niche, setNiche] = useState("");
+  const [plan, setPlan] = useState("startup"); // Default to startup plan
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -55,6 +58,7 @@ const LeadCapture = () => {
         body: JSON.stringify({
           phoneNumber: phone,
           niche,
+          plan,
         }),
       });
   
@@ -76,7 +80,6 @@ const LeadCapture = () => {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4">

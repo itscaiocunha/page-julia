@@ -15,6 +15,7 @@ import Turismo from "./pages/landing/Turismo";
 import Telecomunicacao from "./pages/landing/Telecomunicacao";
 import Summit from "./pages/landing/Summit";
 import LeadCapture from "./pages/landing/Captacao";
+import Pay from "./pages/landing/Pay";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
           <Route path="/summit" element={<Summit />} />
           <Route path="/captacao" element={<LeadCapture />} />
+          <Route path="/pay" element={<Pay />} />
           <Route 
             path="/privacidade" 
             element={
