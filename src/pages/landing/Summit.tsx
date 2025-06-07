@@ -51,6 +51,7 @@ const Summit = () => {
     { name: 'Yamadiesel', logo: '/images/Yamadiesel-Logo.png', url: '#' },
     { name: 'Wehandle', logo: '/images/Wehandle-logo.png', url: '#' },
     { name: 'IcoBatatas', logo: '/images/IcoBatatas-Logo.png', url: '#' },
+    { name: 'Cida Pastori', logo: '/images/Cida-Logo.png', url: '#' }
   ];
 
   const plans = {
@@ -219,10 +220,6 @@ const Summit = () => {
               <a href="#" className="flex items-center">
                 <img src="/images/julia-name.png" alt="Julia" className="h-8 sm:h-12 w-auto" /> {/* Altura menor em mobile */}
               </a>
-
-              <a href="https://rio.websummit.com/" target="_blank" className="flex items-center">
-                <img src="/images/logo_websummit.png" alt="" className="h-6 sm:h-8 w-auto" /> {/* Altura menor em mobile */}
-              </a>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -273,7 +270,7 @@ const Summit = () => {
                 className="order-1 md:order-2"
               >
                 <img 
-                  src="/images/JuliaRJ.png" 
+                  src="/images/retratoJulia.jpg" 
                   alt="Julia AI Assistant" 
                   className="w-full max-w-md mx-auto rounded-[50px]"
                 />

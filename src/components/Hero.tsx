@@ -39,9 +39,9 @@ const Hero = () => {
             className="order-1 md:order-2"
           >
             <img 
-              src="/images/Julia.png" 
+              src="/images/retratoJulia.jpg" 
               alt="Julia AI Assistant" 
-              className="w-full max-w-md mx-auto"
+              className="w-full max-w-md mx-auto rounded-[50px]"
             />
           </motion.div>
         </div>
