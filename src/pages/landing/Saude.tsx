@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ShieldCheck, MessageCircle, CalendarCheck, Calendar, ArrowRight} from 'lucide-react';
+import { ShieldCheck, MessageCircle, CalendarCheck, Calendar, ArrowRight, Paperclip} from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -87,8 +87,8 @@ function Saude() {
      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#53A361] to-white text-transparent bg-clip-text w-full md:w-[90%] lg:w-[100%]">
-              Agilidade de atendimentos e agendamentos,  para que você possa atender mais. 
+          <h1 className="text-4xl w-full max-w-[750px] md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#53A361] to-white text-transparent bg-clip-text">
+            Agilidade de atendimentos e agendamentos, para que você possa atender mais. 
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Aumente seus agendamentos de forma personalizada e humanizada. Agende consultas, tire dúvidas e otimize o atendimento do seu consultório!
@@ -110,12 +110,10 @@ function Saude() {
           <div className="relative flex justify-center">
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
-            <img className="w-full max-w-[800px]" src="/images/Saude.png" alt="Conversa de atendimento virtual" />
+            <img className="w-full mx-auto rounded-[50px]" src="/avatar/draJulia.jpeg" alt="Conversa de atendimento virtual" />
           </div>
         </div>
       </section>
-
-
 
       {/* Video Section */}
       <section className="py-20 bg-gray-900/50">
@@ -124,53 +122,58 @@ function Saude() {
           <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
             <iframe
               className="w-full h-full"
-              src="https://w7startup.com.br/video/Consultorio.mp4"
+              src="videos/Consultorios.mp4"
               title="Julia Demo"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
-                        <a href="#teste">
-                          <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
-                            AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
-                          </button>
-                        </a>
+          <a href="#teste">
+            <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
+              AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+            </button>
+          </a>
         </div>
       </section>
 
       {/* Pain Points Section */}
      <section className="py-20">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-      Soluções que a Julia oferece
-    </h2>
-    <div className="grid md:grid-cols-3 gap-8">
-      {[
-        {
-          icon: <CalendarCheck className="w-8 h-8 text-blue-400" />,
-          title: "Agendamentos automatizados",
-          description: "Evite atrasos e horários vagos. A Julia gerencia sua agenda, confirma consultas e reduz faltas automaticamente."
-        },
-        {
-          icon: <MessageCircle className="w-8 h-8 text-teal-400" />,
-          title: "Atendimento rápido e eficiente",
-          description: "Responda dúvidas frequentes instantaneamente, oferecendo um atendimento humanizado e sempre disponível."
-        },
-        {
-          icon: <ShieldCheck className="w-8 h-8 text-green-400" />,
-          title: "Segurança e privacidade",
-          description: "A Julia protege os dados dos seus pacientes e garante um atendimento seguro e sigiloso, conforme as normas da saúde."
-        }
-      ].map((feature, index) => (
-        <div key={index} className="bg-gray-800/50 p-8 rounded-2xl hover:transform hover:-translate-y-1 transition-all">
-          <div className="mb-4">{feature.icon}</div>
-          <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-          <p className="text-gray-400">{feature.description}</p>
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          Soluções que a Julia oferece
+        </h2>
+        <div className="grid md:grid-cols-4 gap-8">
+          {[
+            {
+              icon: <CalendarCheck className="w-8 h-8 text-blue-400" />,
+              title: "Agendamentos automatizados",
+              description: "Evite atrasos e horários vagos. A Julia gerencia sua agenda, confirma consultas e reduz faltas automaticamente."
+            },
+            {
+              icon: <Paperclip className="w-8 h-8 text-teal-400" />,
+              title: "Leitura de Receitas Médicas",
+              description: "Interprete receitas médicas com clareza e agilidade, garantindo orientação segura e apoio confiável sempre que necessário."
+            },
+            {
+              icon: <MessageCircle className="w-8 h-8 text-teal-400" />,
+              title: "Atendimento rápido e eficiente",
+              description: "Responda dúvidas frequentes instantaneamente, oferecendo um atendimento humanizado e sempre disponível."
+            },
+            {
+              icon: <ShieldCheck className="w-8 h-8 text-green-400" />,
+              title: "Segurança e privacidade",
+              description: "A Julia protege os dados dos seus pacientes e garante um atendimento seguro e sigiloso, conforme as normas da saúde."
+            }
+          ].map((feature, index) => (
+            <div key={index} className="bg-gray-800/50 p-8 rounded-2xl hover:transform hover:-translate-y-1 transition-all">
+              <div className="mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+              <p className="text-gray-400">{feature.description}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
 
       {/* Integrations Section */}
@@ -228,7 +231,7 @@ function Saude() {
             <div className="overflow-hidden rounded-2xl border border-gray-300">
               <iframe 
                 id="zaia-iframe" 
-                src="https://platform.zaia.app/embed/chat/17834"
+                src="https://platform.zaia.app/embed/chat/45422"
                 className="w-full h-80"
                 style={{ border: "none" }}
               ></iframe>
