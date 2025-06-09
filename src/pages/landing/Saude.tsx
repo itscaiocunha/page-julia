@@ -258,7 +258,7 @@ function Saude() {
                 {/* Imagem - oculta em mobile */}
                 <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
                   <img 
-                    src="images/julia_celular.png" 
+                    src="images/julia_agendamento.png" 
                     alt="App Julia no celular" 
                     className="w-full h-full object-cover"
                     style={{ minHeight: '400px' }}
