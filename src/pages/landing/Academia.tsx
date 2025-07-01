@@ -107,7 +107,7 @@ function Academia() {
                 </div>
               </div>
               <div className="relative flex justify-center">
-                <img className="w-full max-w-[800px]" src="/images/Academia.png" alt="Conversa de atendimento virtual para academia" />
+                <img className="w-full mx-auto rounded-[50px]" src="/avatar/PersonalJulia.png" alt="Conversa de atendimento virtual para academia" />
               </div>
             </div>
           </section>
@@ -119,7 +119,7 @@ function Academia() {
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
                 <iframe
                   className="w-full h-full"
-                  src="https://w7startup.com.br/video/Academia.mp4"
+                  src="/videos/Academia.mp4"
                   title="JulIA Demo"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -243,7 +243,7 @@ function Academia() {
                 {/* Imagem - oculta em mobile */}
                 <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
                   <img 
-                    src="images/julia_celular.png" 
+                    src="images/julia_treinamento.png" 
                     alt="App Julia no celular" 
                     className="w-full h-full object-cover"
                     style={{ minHeight: '400px' }}

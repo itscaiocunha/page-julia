@@ -200,8 +200,8 @@ const Ecommerce: React.FC = () => {
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
                 <img 
-                  className="w-full max-w-[800px] rounded-lg shadow-xl" 
-                  src="/images/Ecommerce.png" 
+                  className="w-full mx-auto rounded-[50px]" 
+                  src="/avatar/EcommerceJulia.png"
                   alt="Demonstração do chat do E-commerce" 
                   width={800}
                   height={600}
@@ -218,7 +218,7 @@ const Ecommerce: React.FC = () => {
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800 shadow-2xl">
                 <iframe
                   className="w-full h-full"
-                  src="https://w7startup.com.br/video/Ecommerce.mp4"
+                  src="/videos/Ecommerce.mp4"
                   title="Demonstração Julia para E-commerce"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -329,7 +329,7 @@ const Ecommerce: React.FC = () => {
                 {/* Imagem - oculta em mobile */}
                 <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
                   <img 
-                    src="images/julia_celular.png" 
+                    src="images/julia_vendas.png" 
                     alt="App Julia no celular" 
                     className="w-full h-full object-cover"
                     style={{ minHeight: '400px' }}

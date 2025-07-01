@@ -13,7 +13,6 @@ import Academia from "./pages/landing/Academia";
 import Automobilismo from "./pages/landing/Automotivo";
 import Turismo from "./pages/landing/Turismo";
 import Telecomunicacao from "./pages/landing/Telecomunicacao";
-import Summit from "./pages/landing/Summit";
 import LeadCapture from "./pages/landing/Captacao";
 import Pay from "./pages/landing/Pay";
 
@@ -35,7 +34,6 @@ const App = () => (
           <Route path="/automotivo" element={<Automobilismo />} />
           <Route path="/turismo" element={<Turismo />} />
           <Route path="/telecomunicacao" element={<Telecomunicacao />} />
-          <Route path="/conectAI" element={<Summit />} />
           <Route path="/captacao" element={<LeadCapture />} />
           <Route path="/pay" element={<Pay />} />
           <Route 
