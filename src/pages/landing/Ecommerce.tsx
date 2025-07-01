@@ -218,7 +218,7 @@ const Ecommerce: React.FC = () => {
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800 shadow-2xl">
                 <iframe
                   className="w-full h-full"
-                  src="/videos/Ecommerce.mp4"
+                  src="https://w7agencia.com.br/videos/Ecommerce.mp4"
                   title="Demonstração Julia para E-commerce"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

@@ -119,7 +119,7 @@ function Academia() {
               <div className="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden bg-gray-800">
                 <iframe
                   className="w-full h-full"
-                  src="/videos/Academia.mp4"
+                  src="https://w7agencia.com.br/videos/Academia.mp4"
                   title="JulIA Demo"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
