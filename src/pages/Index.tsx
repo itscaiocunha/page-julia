@@ -59,20 +59,11 @@ const Index = () => {
     { name: 'IcoBatatas', logo: '/images/IcoBatatas-Logo.png', url: '#' },
     { name: 'Cida Pastori', logo: '/images/Cida-Logo.png', url: '#' }
   ];
-
-  const periodLabels: { [key in PricingPeriod]: string } = {
-    monthly: 'Mensal',
-    'half-yearly': 'Semestral',
-    annual: 'Anual',
-    custom: 'Personalizado'
-  };
   
   const plans = {
     monthly: [
       {
         name: 'Startup+',
-        price: '449,00',
-        period: ' por mês',
         features: [
           'Inteligência Artificial',
           '7 mil interações',
@@ -84,8 +75,6 @@ const Index = () => {
       },
       {
         name: 'Premium',
-        price: '899,00',
-        period: ' por mês',
         features: [
           'Inteligência Artificial',
           '10 mil interações',
@@ -98,8 +87,6 @@ const Index = () => {
       },
       {
         name: 'Master',
-        price: '1.299,00',
-        period: ' por mês',
         features: [
           'Atendimento dedicado',
           '20 mil interações',
@@ -113,8 +100,6 @@ const Index = () => {
     'half-yearly': [
       {
         name: 'Startup+',
-        price: '2.499,00',
-        period: ' por 6 meses',
         features: [
           'Inteligência Artificial',
           '7 mil interações',
@@ -126,8 +111,6 @@ const Index = () => {
       },
       {
         name: 'Premium',
-        price: '4.999,00',
-        period: ' por 6 meses',
         features: [
           'Inteligência Artificial',
           '10 mil interações',
@@ -140,8 +123,6 @@ const Index = () => {
       },
       {
         name: 'Master',
-        price: '7.199,00',
-        period: ' por 6 meses',
         features: [
           'Atendimento dedicado',
           '20 mil interações',
@@ -155,8 +136,6 @@ const Index = () => {
     annual: [
       {
         name: 'Startup+',
-        price: '4.799,00',
-        period: ' por 12 meses',
         features: [
           'Inteligência Artificial',
           '7 mil interações',
@@ -168,8 +147,6 @@ const Index = () => {
       },
       {
         name: 'Premium',
-        price: '9.599,00',
-        period: ' por 12 meses',
         features: [
           'Inteligência Artificial',
           '10 mil interações',
@@ -182,8 +159,6 @@ const Index = () => {
       },
       {
         name: 'Master',
-        price: '13.799,00',
-        period: ' por 12 meses',
         features: [
           'Atendimento dedicado',
           '20 mil interações',
@@ -197,8 +172,6 @@ const Index = () => {
     custom: [
       {
         name: 'Plano Personalizado',
-        price: 'Sob consulta',
-        period: '',
         features: [
           'Soluções customizadas',
           'Interações ilimitadas',
@@ -399,22 +372,6 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="flex justify-center flex-wrap gap-4 mb-12">
-              {(Object.keys(plans) as PricingPeriod[]).map((p) => (
-                <button
-                  key={p}
-                  onClick={() => setPeriod(p)}
-                  className={`px-6 py-2 rounded-full transition-all ${
-                    period === p 
-                      ? 'bg-julia-blue text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  {periodLabels[p]}
-                </button>
-              ))}
-            </div>
-
             <div className="grid md:grid-cols-3 gap-8">
               {plans[period].map((plan, index) => (
                 <motion.div
@@ -430,13 +387,6 @@ const Index = () => {
                   }`}
                 >
                   <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-                  <div className="mb-8">
-                    <span className="text-4xl font-bold">
-                        {plan.price !== 'Sob consulta' ? 'R$ ' : ''}{plan.price}
-                    </span>
-                    <br />
-                    <span className="text-sm opacity-75">{plan.period}</span>
-                  </div>
                   
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature) => (
