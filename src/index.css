@@ -1,9 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
+
+  /* MODO CLARO (LIGHT MODE) */
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -26,12 +27,36 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
   }
+
+  /* MODO ESCURO (DARK MODE) */
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 52 100% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 216 92% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 52 100% 50%;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -42,7 +67,11 @@
   .glass {
     @apply bg-white/80 backdrop-blur-md border border-white/20;
   }
-  
+
+  .dark .glass {
+    @apply bg-black/50 backdrop-blur-md border border-white/10;
+  }
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-julia-blue to-julia-darkBlue;
   }
