@@ -300,7 +300,7 @@ const Ecommerce: React.FC = () => {
                 <div className="overflow-hidden rounded-2xl border border-gray-300 shadow-xl">
                   <iframe 
                     id="zaia-iframe" 
-                    src="https://platform.zaia.app/embed/chat/17834"
+                    src="https://platform.zaia.app/embed/chat/44982"
                     className="w-full h-80"
                     style={{ border: "none" }}
                     title="Demonstração do Chat Julia"
@@ -315,36 +315,43 @@ const Ecommerce: React.FC = () => {
           </section>
 
           {/* Schedule Demo Section */}
-          <section id="cadastro" className="py-20 bg-gray-900/50">
-            <div className="container mx-auto px-4">
-              {/* Título centralizado acima */}
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Agende uma demonstração
-                </h2>
-              </div>
-
-              {/* Container pai para alinhamento perfeito */}
-              <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 max-w-6xl mx-auto">
-                {/* Imagem - oculta em mobile */}
-                <div className="hidden md:block md:w-1/2 overflow-hidden rounded-2xl bg-gray-800">
-                  <img 
-                    src="images/julia_vendas.png" 
-                    alt="App Julia no celular" 
-                    className="w-full h-full object-cover"
-                    style={{ minHeight: '400px' }}
-                  />
+          <section id="cadastro" className="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-gray-950 to-black text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(137, 44, 219, 0.2) 0%, transparent 70%)' }}></div>
+                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                    <div className="inline-flex items-center gap-2 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full mb-8">
+                        <Zap className="w-4 h-4" /> Oferta Especial para Novos Clientes
+                    </div>
+                    <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                        O melhor investimento para <br /> seu <span className="bg-gradient-to-b from-[#892CDB] to-white text-transparent bg-clip-text">ecommerce</span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-4xl mx-auto">
+                        Junte-se a centenas de vendedores que já aumentaram suas vendas com IA
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                        <a href="URL_PARA_COMECE_GRATUITAMENTE"> {/* Atualize este link */}
+                            <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                                Começar Gratuitamente <ArrowRight className="w-5 h-5" />
+                            </button>
+                        </a>
+                        <a href="URL_PARA_FALAR_COM_ESPECIALISTA"> {/* Atualize este link */}
+                            <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
+                                Falar com Especialista <ArrowRight className="w-5 h-5" />
+                            </button>
+                        </a>
+                    </div>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 text-gray-400 text-sm md:text-base">
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-yellow-400 rounded-full inline-block" aria-hidden="true"></span> Sem cartão de crédito
+                        </span>
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full inline-block" aria-hidden="true"></span> Cancele quando quiser
+                        </span>
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-green-500 rounded-full inline-block" aria-hidden="true"></span> Suporte em português
+                        </span>
+                    </div>
                 </div>
-                
-                {/* Formulário - mesma altura que a imagem */}
-                <div className="md:w-1/2">
-                  <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl h-full">
-                    <div id="hubspotForm" className="h-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
         </main>
 
         {/* Footer */}
