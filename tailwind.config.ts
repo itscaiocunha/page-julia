@@ -18,17 +18,18 @@ export default {
       },
     },
     extend: {
-      colors: {
-        // Cores base do primeiro arquivo (com variáveis)
+      colors: {        
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        // CORREÇÃO: Primary (Amarelo ML)
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        // CORREÇÃO: Secondary (Azul ML)
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -63,7 +64,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Novas cores adicionadas do segundo arquivo
+        // Novas cores adicionadas (manter)
         julia: {
           blue: "#008FF1",
           darkBlue: "#00498F",
@@ -75,7 +76,6 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        // Keyframes do primeiro arquivo
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -92,7 +92,7 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" },
         },
-        // Keyframes adicionados do segundo arquivo
+        // Animações para transições de UI
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
@@ -103,12 +103,10 @@ export default {
         },
       },
       animation: {
-        // Animações do primeiro arquivo
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 3s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
-        // Animações adicionadas do segundo arquivo
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
       },
@@ -116,6 +114,7 @@ export default {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-blue": "var(--gradient-blue)",
         "gradient-accent": "var(--gradient-accent)",
+        "gradient-accent-vertical": "var(--gradient-accent-vertical)", // Adicionado para a seção de CTA
       },
       boxShadow: {
         "sm": "var(--shadow-sm)",
