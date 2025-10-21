@@ -25,7 +25,7 @@ import juliaTchau from "@/assets/julia-tchau-final.mp4";
 import juliaChat from "@/assets/julia-chat.mp4";
 import juliaName from "@/assets/julia-name.png";
 
-const Forms = () => {
+const Index = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoadingScreen, setShowLoadingScreen] = useState(false);
@@ -344,4 +344,4 @@ const Forms = () => {
   return null;
 };
 
-export default Forms;
+export default Index;
