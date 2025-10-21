@@ -316,7 +316,7 @@ const Index = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="glass rounded-xl p-6 sm:p-8 flex items-center justify-center bg-black hover:shadow-2xl transition-transform transform hover:scale-105 h-full"
+                      className="glass rounded-xl p-6 sm:p-8 flex items-center justify-center hover:shadow-2xl transition-transform transform hover:scale-105 h-full"
                     >
                       <img 
                         src={client.logo} 
