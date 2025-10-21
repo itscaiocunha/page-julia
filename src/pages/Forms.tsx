@@ -25,7 +25,7 @@ import juliaTchau from "@/assets/julia-tchau-final.mp4";
 import juliaChat from "@/assets/julia-chat.mp4";
 import juliaName from "@/assets/julia-name.png";
 
-const Index = () => {
+const Forms = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoadingScreen, setShowLoadingScreen] = useState(false);
@@ -64,7 +64,38 @@ const Index = () => {
     }
   }, [step]);
 
-  const handleNext = () => {
+  const sendToWebhook = async () => {
+    try {
+      const webhookUrl = "https://hook.us1.make.com/69cadmb47bqfdr3bw3p8qnraat8hzrey";
+      
+      const data = {
+        name: clientName,
+        email: clientEmail,
+        phone: clientPhone,
+        clientTypes: clientTypes,
+        objective: objective,
+        timestamp: new Date().toISOString(),
+      };
+
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      console.log("Dados enviados ao webhook com sucesso:", data);
+    } catch (error) {
+      console.error("Erro ao enviar dados ao webhook:", error);
+    }
+  };
+
+  const handleNext = async () => {
+    if (step === 3) {
+      await sendToWebhook();
+    }
+
     setShowLoadingScreen(true);
 
     setTimeout(() => {
@@ -344,4 +375,4 @@ const Index = () => {
   return null;
 };
 
-export default Index;
+export default Forms;
