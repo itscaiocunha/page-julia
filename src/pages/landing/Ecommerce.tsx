@@ -184,14 +184,14 @@ const Ecommerce: React.FC = () => {
                   Potencialize as vendas do seu E-commerce com um atendimento rápido, personalizado e inteligente.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#teste">
+                  <a href="https://hellojulia.com.br/formulario">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
-                      TESTE AGORA <ArrowRight className="w-5 h-5" />
+                      Teste gratuitamente <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
-                  <a href="#cadastro">
+                  <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o">
                     <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
-                      AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                      Falar com especialista <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -225,9 +225,9 @@ const Ecommerce: React.FC = () => {
                   loading="lazy"
                 ></iframe>
               </div>
-                            <a href="#teste">
+              <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o">
                 <button className="mt-12 bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg mx-auto">
-                  AGENDAR UMA REUNIÃO <ArrowRight className="w-5 h-5" />
+                  Falar com especialista <ArrowRight className="w-5 h-5" />
                 </button>
               </a>
             </div>
@@ -328,12 +328,12 @@ const Ecommerce: React.FC = () => {
                         Junte-se a centenas de vendedores que já aumentaram suas vendas com IA
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                        <a href="URL_PARA_COMECE_GRATUITAMENTE"> {/* Atualize este link */}
+                        <a href="https://hellojulia.com.br/formulario">
                             <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                                 Começar Gratuitamente <ArrowRight className="w-5 h-5" />
                             </button>
                         </a>
-                        <a href="URL_PARA_FALAR_COM_ESPECIALISTA"> {/* Atualize este link */}
+                        <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o">
                             <button className="bg-[#25D366] hover:bg-[#075E54] rounded-lg px-8 py-3 text-lg md:text-xl text-white font-medium flex items-center gap-2 transition-colors duration-200 hover:shadow-lg">
                                 Falar com Especialista <ArrowRight className="w-5 h-5" />
                             </button>

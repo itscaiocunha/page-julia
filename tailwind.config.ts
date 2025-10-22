@@ -27,7 +27,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          hover: "hsl(var(--primary-hover))", // Adicionado do segundo arquivo
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -45,7 +45,7 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        success: { // Adicionado do segundo arquivo
+        success: {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
@@ -57,12 +57,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        progress: { // Adicionado do segundo arquivo
+        progress: {
             active: "hsl(var(--progress-active))",
             inactive: "hsl(var(--progress-inactive))",
             complete: "hsl(var(--progress-complete))",
         },
-        sidebar: { // Adicionado do primeiro arquivo
+        sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
           primary: "hsl(var(--sidebar-primary))",
@@ -72,7 +72,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        julia: { // Adicionado do primeiro arquivo
+        julia: {
           blue: "#008FF1",
           darkBlue: "#00498F",
         },
@@ -91,56 +91,56 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": { // Do primeiro arquivo
+        "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
-        "pulse-slow": { // Do primeiro arquivo
+        "pulse-slow": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" },
         },
-        "fade-up": { // Do primeiro arquivo
+        "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "fade-in": { // Definição mesclada/melhorada
+        "fade-in": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
         },
-        "fade-out": { // Do segundo arquivo
+        "fade-out": {
           "0%": { opacity: "1", transform: "translateY(0)" },
           "100%": { opacity: "0", transform: "translateY(-10px)" }
         },
-        "slide-in-right": { // Do segundo arquivo
+        "slide-in-right": {
           "0%": { transform: "translateX(100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" }
         },
-        "slide-in-left": { // Do segundo arquivo
+        "slide-in-left": {
           "0%": { transform: "translateX(-100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" }
         },
-        "pulse-glow": { // Do segundo arquivo
+        "pulse-glow": {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.7", transform: "scale(1.05)" }
         },
-        "spin-slow": { // Do segundo arquivo
+        "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" }
         },
-        "slide-in-down": { // Do segundo arquivo
+        "slide-in-down": {
           "0%": { transform: "translateY(-100%)", opacity: "0.5" },
           "100%": { transform: "translateY(100%)", opacity: "0" }
         },
-        "rotate-3d": { // Do segundo arquivo
+        "rotate-3d": {
           "0%": { transform: "rotateY(0deg) rotateX(0deg)" },
           "100%": { transform: "rotateY(360deg) rotateX(360deg)" }
         },
-        "wave": { // Do segundo arquivo
+        "wave": {
           "0%, 100%": { transform: "translateX(0px)" },
           "25%": { transform: "translateX(4px)" },
           "75%": { transform: "translateX(-4px)" }
         },
-        "elastic-wave": { // Do segundo arquivo
+        "elastic-wave": {
           "0%, 100%": { transform: "translateX(0px) scaleX(1)" },
           "15%": { transform: "translateX(12px) scaleX(1.3)" },
           "30%": { transform: "translateX(-8px) scaleX(0.9)" },
@@ -149,7 +149,7 @@ export default {
           "75%": { transform: "translateX(3px) scaleX(1.05)" },
           "90%": { transform: "translateX(-2px) scaleX(0.98)" }
         },
-        "whip-motion": { // Do segundo arquivo
+        "whip-motion": {
           "0%": { transform: "translateX(0px) rotate(0deg)" },
           "10%": { transform: "translateX(30px) rotate(8deg)" },
           "20%": { transform: "translateX(-25px) rotate(-10deg)" },
@@ -162,14 +162,14 @@ export default {
           "90%": { transform: "translateX(2px) rotate(1deg)" },
           "100%": { transform: "translateX(0px) rotate(0deg)" }
         },
-        "snake-wave": { // Do segundo arquivo
+        "snake-wave": {
           "0%": { transform: "translateX(0px)" },
           "25%": { transform: "translateX(8px)" },
           "50%": { transform: "translateX(0px)" },
           "75%": { transform: "translateX(-8px)" },
           "100%": { transform: "translateX(0px)" }
         },
-        "glow-pulse": { // Do segundo arquivo
+        "glow-pulse": {
           "0%, 100%": {
             boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
             filter: "brightness(1)"
@@ -179,7 +179,7 @@ export default {
             filter: "brightness(1.5)"
           }
         },
-        "wave-hand": { // Do segundo arquivo
+        "wave-hand": {
           "0%, 100%": { transform: "rotate(0deg)" },
           "10%": { transform: "rotate(14deg)" },
           "20%": { transform: "rotate(-8deg)" },
@@ -192,30 +192,30 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite", // Do primeiro arquivo
-        "pulse-slow": "pulse-slow 4s ease-in-out infinite", // Do primeiro arquivo
-        "fade-up": "fade-up 0.5s ease-out", // Do primeiro arquivo
-        "fade-in": "fade-in 0.4s ease-out", // Do segundo arquivo
-        "fade-out": "fade-out 0.4s ease-out", // Do segundo arquivo
-        "slide-in-right": "slide-in-right 0.5s ease-out", // Do segundo arquivo
-        "slide-in-left": "slide-in-left 0.5s ease-out", // Do segundo arquivo
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite", // Do segundo arquivo
-        "spin-slow": "spin-slow 3s linear infinite", // Do segundo arquivo
-        "rotate-3d": "rotate-3d 8s linear infinite", // Do segundo arquivo
-        "wave": "wave 0.8s ease-in-out infinite", // Do segundo arquivo
-        "elastic-wave": "elastic-wave 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)", // Do segundo arquivo
-        "whip-motion": "whip-motion 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)", // Do segundo arquivo
-        "snake-wave": "snake-wave 2s ease-in-out", // Do segundo arquivo
-        "glow-pulse": "glow-pulse 0.8s ease-in-out", // Do segundo arquivo
-        "wave-hand": "wave-hand 1.5s ease-in-out infinite", // Do segundo arquivo
+        "float": "float 3s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "fade-up": "fade-up 0.5s ease-out",
+        "fade-in": "fade-in 0.4s ease-out",
+        "fade-out": "fade-out 0.4s ease-out",
+        "slide-in-right": "slide-in-right 0.5s ease-out",
+        "slide-in-left": "slide-in-left 0.5s ease-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 3s linear infinite",
+        "rotate-3d": "rotate-3d 8s linear infinite",
+        "wave": "wave 0.8s ease-in-out infinite",
+        "elastic-wave": "elastic-wave 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "whip-motion": "whip-motion 1s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "snake-wave": "snake-wave 2s ease-in-out",
+        "glow-pulse": "glow-pulse 0.8s ease-in-out",
+        "wave-hand": "wave-hand 1.5s ease-in-out infinite",
       },
-      backgroundImage: { // Do primeiro arquivo
+      backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-blue": "var(--gradient-blue)",
         "gradient-accent": "var(--gradient-accent)",
         "gradient-accent-vertical": "var(--gradient-accent-vertical)",
       },
-      boxShadow: { // Do primeiro arquivo
+      boxShadow: {
         "sm": "var(--shadow-sm)",
         "md": "var(--shadow-md)",
         "lg": "var(--shadow-lg)",

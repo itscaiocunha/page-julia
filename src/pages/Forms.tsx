@@ -24,8 +24,10 @@ import { getFirstName } from "@/lib/utils";
 import juliaTchau from "@/assets/julia-tchau-final.mp4";
 import juliaChat from "@/assets/julia-chat.mp4";
 import juliaName from "@/assets/julia-name.png";
+import juliaAcenando from "@/assets/julia-acenando-logo.mp4";
+import { LoadingDots } from "@/components/LoadingDots";
 
-const Forms = () => {
+const Index = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoadingScreen, setShowLoadingScreen] = useState(false);
@@ -62,12 +64,25 @@ const Forms = () => {
       }, 4000);
       return () => clearTimeout(timer);
     }
+
+    // Step 4: aguardar 3 minutos (180000ms)
+    if (step === 4) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setStep(5);
+          setTimeout(() => setIsTransitioning(false), 100);
+        }, 300);
+      }, 180000); // 3 minutos = 180000 milissegundos
+
+      return () => clearTimeout(timer);
+    }
   }, [step]);
 
   const sendToWebhook = async () => {
     try {
       const webhookUrl = "https://hook.us1.make.com/69cadmb47bqfdr3bw3p8qnraat8hzrey";
-      
+
       const data = {
         name: clientName,
         email: clientEmail,
@@ -103,11 +118,7 @@ const Forms = () => {
       setIsTransitioning(true);
 
       setTimeout(() => {
-        if (step === 3) {
-          setStep(5);
-        } else {
-          setStep(step + 1);
-        }
+        setStep(step + 1);
         setTimeout(() => setIsTransitioning(false), 100);
       }, 300);
     }, 2500);
@@ -155,7 +166,7 @@ const Forms = () => {
     return (
       <StepLayout
         currentStep={2}
-        totalSteps={4}
+        totalSteps={5}
         isTransitioning={isTransitioning}
         leftContent={
           <div className="animate-fade-in space-y-6">
@@ -240,7 +251,7 @@ const Forms = () => {
     return (
       <StepLayout
         currentStep={3}
-        totalSteps={4}
+        totalSteps={5}
         isTransitioning={isTransitioning}
         leftContent={
           <div className="animate-fade-in space-y-6">
@@ -310,12 +321,50 @@ const Forms = () => {
     );
   }
 
+  // Step 4: Agent Preparation (3 minutos de espera)
+  if (step === 4) {
+    return (
+      <StepLayout
+        currentStep={4}
+        totalSteps={5}
+        isTransitioning={isTransitioning}
+        leftContent={
+          <div className="animate-fade-in space-y-8 text-center flex flex-col items-center justify-center min-h-[60vh]">
+            <ProcessingIcon />
+            <div className="space-y-4">
+              <h1 className="text-4xl font-bold text-foreground animate-pulse">
+                Estamos preparando seu agente
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Isso levará alguns instantes...
+              </p>
+            </div>
+          </div>
+        }
+        rightContent={
+          <div className="flex items-center justify-center animate-fade-in">
+            <div className="relative rounded-2xl overflow-hidden w-[400px] h-[400px]">
+              <video
+                src={juliaAcenando}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        }
+      />
+    );
+  }
+
   // Step 5: Success
   if (step === 5) {
     return (
       <StepLayout
-        currentStep={4}
-        totalSteps={4}
+        currentStep={5}
+        totalSteps={5}
         isTransitioning={isTransitioning}
         leftContent={
           <div className="animate-fade-in space-y-8 text-center">
@@ -333,20 +382,45 @@ const Forms = () => {
               <p className="text-xl text-muted-foreground">Seu painel foi configurado com sucesso</p>
             </div>
 
-            <div className="space-y-3">
-              <p className="text-foreground text-lg">
-                Obrigado por escolher nossa plataforma,{" "}
-                <span className="font-bold text-primary">{getFirstName(clientName)}</span>
-              </p>
-              <p className="text-muted-foreground">
-                Enviamos um e-mail de confirmação para{" "}
-                <span className="font-medium text-foreground">{clientEmail}</span>
-              </p>
-              <br></br>
-              <p className="text-muted-foreground">
-                💡 <strong>Aproveite:</strong> você tem <strong>7 dias grátis</strong> para explorar todos os recursos!
-              </p>
-            </div>
+            {objective === "mercadolivre" ? (
+              // Mensagem especial para Mercado Livre
+              <div className="space-y-3">
+                <p className="text-foreground text-lg">
+                  Obrigado por escolher nossa plataforma,{" "}
+                  <span className="font-bold text-primary">{getFirstName(clientName)}</span>
+                </p>
+                
+                <div className="bg-primary/10 border-2 border-primary rounded-lg p-6 my-4">
+                  <p className="text-xl font-bold text-primary mb-2">
+                    📞 Um consultor entrará em contato com você
+                  </p>
+                  <p className="text-muted-foreground">
+                    Em breve nossa equipe especializada em Mercado Livre entrará em contato para personalizar sua experiência
+                  </p>
+                </div>
+                
+                <p className="text-muted-foreground">
+                  Enviamos um e-mail de confirmação para{" "}
+                  <span className="font-medium text-foreground">{clientEmail}</span>
+                </p>
+              </div>
+            ) : (
+              // Mensagem padrão para outras opções
+              <div className="space-y-3">
+                <p className="text-foreground text-lg">
+                  Obrigado por escolher nossa plataforma,{" "}
+                  <span className="font-bold text-primary">{getFirstName(clientName)}</span>
+                </p>
+                <p className="text-muted-foreground">
+                  Enviamos um e-mail de confirmação para{" "}
+                  <span className="font-medium text-foreground">{clientEmail}</span>
+                </p>
+                <br></br>
+                <p className="text-muted-foreground">
+                  💡 <strong>Aproveite:</strong> você tem <strong>7 dias grátis</strong> para explorar todos os recursos!
+                </p>
+              </div>
+            )}
 
 
             <Button
@@ -363,9 +437,15 @@ const Forms = () => {
         }
         rightContent={
           <div className="flex items-center justify-center animate-fade-in">
-            <video src={juliaTchau} autoPlay loop muted playsInline className="w-full max-w-4xl scale-125">
-              Seu navegador não suporta vídeos.
-            </video>
+            <div className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/BI5AMD3ghAU"
+                title="Tutorial Julia"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
           </div>
         }
       />
@@ -375,4 +455,4 @@ const Forms = () => {
   return null;
 };
 
-export default Forms;
+export default Index;

@@ -149,8 +149,8 @@ const MercadoLivre = () => {
                   className="group"
                   asChild
                 >
-                  <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">
-                    Começar Agora
+                  <a href="https://hellojulia.com.br/formulario" target="_blank" rel="noopener noreferrer">
+                    Testar Gratuitamente
                     <TrendingUp className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -170,7 +170,7 @@ const MercadoLivre = () => {
                   asChild
                 >
                   <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">
-                    Ver Demonstração
+                    Falar com especialista
                   </a>
                 </Button>
               </div>
@@ -568,8 +568,8 @@ const MercadoLivre = () => {
                   fontWeight: 'bold',
                 }}
               >
-                <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">
-                  Começar Gratuitamente
+                <a href="https://hellojulia.com.br/formulario" target="_blank" rel="noopener noreferrer">
+                  Testar gratuitamente
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -589,7 +589,7 @@ const MercadoLivre = () => {
                 }}
               >
                 <a href="https://wa.me/5519989728022?text=Quero%20conhecer%20mais%20sobre%20a%20solu%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">
-                  Falar com Especialista
+                  Falar com especialista
                 </a>
               </Button>
             </div>

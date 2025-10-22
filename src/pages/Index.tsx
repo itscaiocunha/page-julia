@@ -71,7 +71,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -83,7 +83,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Master',
@@ -94,7 +94,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       }
     ],
     'half-yearly': [
@@ -107,7 +107,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -119,7 +119,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Master',
@@ -130,7 +130,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       }
     ],
     annual: [
@@ -143,7 +143,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -155,7 +155,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       },
       {
         name: 'Master',
@@ -166,7 +166,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       }
     ],
     custom: [
@@ -179,7 +179,7 @@ const Index = () => {
           'Cérebro personalizado',
           'Suporte Dedicado 24/7'
         ],
-        link: '#contact'
+        link: 'https://hellojulia.com.br/formulario'
       }
     ]
   };
@@ -425,7 +425,7 @@ const Index = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-secondary/50">
+        {/* <section id="contact" className="py-20 bg-secondary/50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
               <div className="space-y-4">
@@ -482,7 +482,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}
