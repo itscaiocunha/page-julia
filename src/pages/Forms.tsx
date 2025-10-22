@@ -19,7 +19,9 @@ import {
   Plane,
   Zap,
   Target,
+  MoreHorizontal,
 } from "lucide-react";
+
 import { getFirstName } from "@/lib/utils";
 import juliaTchau from "@/assets/julia-tchau-final.mp4";
 import juliaChat from "@/assets/julia-chat.mp4";
@@ -45,14 +47,15 @@ const Index = () => {
     { id: "mercadolivre", label: "Mercado Livre", icon: Store },
     { id: "beleza", label: "Beleza", icon: Scissors },
     { id: "ecommerce", label: "E-commerce", icon: ShoppingCart },
+    { id: "automotivo", label: "Automotivo", icon: Car },
+    { id: "turismo", label: "Turismo", icon: Plane },
   ];
 
   const objectivesPage2 = [
-    { id: "automotivo", label: "Automotivo", icon: Car },
     { id: "academia", label: "Academia", icon: Dumbbell },
     { id: "delivery", label: "Delivery", icon: Package },
     { id: "telecomunicacao", label: "Telecomunicação", icon: Phone },
-    { id: "turismo", label: "Turismo", icon: Plane },
+    { id: "outros", label: "Outros", icon: MoreHorizontal },
   ];
 
   useEffect(() => {
@@ -222,10 +225,29 @@ const Index = () => {
                   type="tel"
                   placeholder="(00) 00000-0000"
                   value={clientPhone}
-                  onChange={(e) => setClientPhone(e.target.value)}
+                  onChange={(e) => {
+                    let value = e.target.value.replace(/\D/g, ""); // remove tudo que não for número
+
+                    // Adiciona o DDD com parênteses
+                    if (value.length > 0) {
+                      value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+                    }
+
+                    // Se tiver 10 dígitos → (00) 0000-0000
+                    // Se tiver 11 dígitos → (00) 00000-0000
+                    if (value.length >= 10 && value.replace(/\D/g, "").length < 11) {
+                      value = value.replace(/(\d{4})(\d{0,4})$/, "$1-$2");
+                    } else if (value.length >= 11) {
+                      value = value.replace(/(\d{5})(\d{0,4})$/, "$1-$2");
+                    }
+
+                    setClientPhone(value);
+                  }}
+                  maxLength={15}
                   required
                 />
               </div>
+
             </div>
 
             <div className="flex justify-end pt-4">
@@ -292,7 +314,7 @@ const Index = () => {
           <div className="space-y-6 animate-fade-in">
             <div className="bg-card rounded-2xl p-8 shadow-lg border-2 border-border">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                A Julia já aumentou o resultado em mais de 17 segmentos!
+                A Julia alcança até 90% de conversão em carrinhos abandonados!
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -300,7 +322,7 @@ const Index = () => {
                     <Zap className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-foreground">450 leads</p>
+                    <p className="font-bold text-lg text-foreground">Agente 100% customizado</p>
                     <p className="text-sm text-muted-foreground">Artificial Intelligence</p>
                   </div>
                 </div>
@@ -309,7 +331,7 @@ const Index = () => {
                     <Target className="w-6 h-6 text-success" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-foreground">230 leads</p>
+                    <p className="font-bold text-lg text-foreground">+500 integrações</p>
                     <p className="text-sm text-muted-foreground">Meta, WhatsApp e Instagram Integration</p>
                   </div>
                 </div>
@@ -389,7 +411,7 @@ const Index = () => {
                   Obrigado por escolher nossa plataforma,{" "}
                   <span className="font-bold text-primary">{getFirstName(clientName)}</span>
                 </p>
-                
+
                 <div className="bg-primary/10 border-2 border-primary rounded-lg p-6 my-4">
                   <p className="text-xl font-bold text-primary mb-2">
                     📞 Um consultor entrará em contato com você
@@ -398,7 +420,7 @@ const Index = () => {
                     Em breve nossa equipe especializada em Mercado Livre entrará em contato para personalizar sua experiência
                   </p>
                 </div>
-                
+
                 <p className="text-muted-foreground">
                   Enviamos um e-mail de confirmação para{" "}
                   <span className="font-medium text-foreground">{clientEmail}</span>
