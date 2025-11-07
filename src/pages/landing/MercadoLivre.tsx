@@ -80,7 +80,7 @@ const MercadoLivre = () => {
     };
 
     const script = document.createElement("script");
-    script.src = "https://platform.hellojulia.com.br/static/js/widget.js";
+    script.src = "https://platform.hellojulia.com.br/script/widget-loader.js";
     script.async = true;
     document.body.appendChild(script);
 
