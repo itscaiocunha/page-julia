@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, TrendingUp, Clock, Zap, CheckCircle2, MessageCircle, Bot, Settings, ArrowRight, Sparkles } from "lucide-react";
@@ -73,6 +74,21 @@ const steps = [
 ];
 
 const MercadoLivre = () => {
+  useEffect(() => {
+    (window as any).ZWidget = {
+      AgentURL: "https://platform.hellojulia.com.br/embed/chat/67174",
+    };
+
+    const script = document.createElement("script");
+    script.src = "https://platform.hellojulia.com.br/static/js/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+      delete (window as any).ZWidget;
+    };
+  }, []);
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -486,7 +502,7 @@ const MercadoLivre = () => {
         </div>
       </section>  
 
-      {/* Experience Section */}
+      {/* Experience Section
         <section id="experiencia" className="py-20" style={{ backgroundColor: '#0E1428' }}>
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
@@ -506,7 +522,7 @@ const MercadoLivre = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
       {/* CTA Section */}
       <section 
