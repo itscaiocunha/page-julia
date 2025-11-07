@@ -22,8 +22,8 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "#000",
+        foreground: "#FFF",
         // CORREÇÃO: Primary (Amarelo ML)
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -31,7 +31,7 @@ export default {
         },
         // CORREÇÃO: Secondary (Azul ML)
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#000",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -68,6 +68,7 @@ export default {
         julia: {
           blue: "#008FF1",
           darkBlue: "#00498F",
+          sectionblue: "#004d94",
         },
       },
       borderRadius: {
