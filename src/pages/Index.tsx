@@ -119,7 +119,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -131,7 +131,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       },
       {
         name: 'Master',
@@ -142,7 +142,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       }
     ],
     'half-yearly': [
@@ -280,7 +280,15 @@ const Index = () => {
                   className="bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white px-8 py-4 rounded-lg font-semibold"
                   onClick={() => document.getElementById('our-pricings')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  SAIBA MAIS
+                  TESTE GRÁTIS
+                </motion.button>                
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white px-8 py-4 rounded-lg font-semibold"
+                  onClick={() => document.getElementById('our-pricings')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                <a href="https://www.hellojulia.com.br/formulario">FALE COM ESPECIALISTA</a>
                 </motion.button>
               </motion.div>
               
@@ -465,12 +473,7 @@ const Index = () => {
               </h2>
               
               <div className="flex justify-center">
-                <video 
-                  controls 
-                  className="w-full h-auto mx-auto rounded-xl"
-                >
-                  <source src="/videos/julia_video.mp4" type="video/mp4" className="" />
-                </video>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/rhJJSpa6hRE?si=LUWgQb2rsLvmEdaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
             </div>
           </div>
