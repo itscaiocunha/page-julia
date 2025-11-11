@@ -288,7 +288,7 @@ const Index = () => {
                   className="bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white px-8 py-4 rounded-lg font-semibold"
                   onClick={() => document.getElementById('our-pricings')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                <a href="https://www.hellojulia.com.br/formulario">FALE COM ESPECIALISTA</a>
+                <a href="https://wa.me/5511916578050">FALE COM ESPECIALISTA</a>
                 </motion.button>
               </motion.div>
               
