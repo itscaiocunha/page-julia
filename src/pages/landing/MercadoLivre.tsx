@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, TrendingUp, Clock, Zap, CheckCircle2, MessageCircle, Bot, Settings, ArrowRight, Sparkles } from "lucide-react";
@@ -5,7 +6,6 @@ import logo from "@/assets/logo.png";
 import icon247 from "@/assets/icon-24-7.jpg";
 import iconSales from "@/assets/icon-sales.jpg";
 import iconAutomation from "@/assets/icon-automation.jpg";
-import heroVideo from "@/assets/hero-video.mp4";
 
 const features = [
   {
@@ -74,6 +74,21 @@ const steps = [
 ];
 
 const MercadoLivre = () => {
+  useEffect(() => {
+    (window as any).ZWidget = {
+      AgentURL: "https://platform.hellojulia.com.br/embed/chat/67174",
+    };
+
+    const script = document.createElement("script");
+    script.src = "https://platform.hellojulia.com.br/script/widget-loader.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+      delete (window as any).ZWidget;
+    };
+  }, []);
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -173,19 +188,6 @@ const MercadoLivre = () => {
                     Falar com especialista
                   </a>
                 </Button>
-              </div>
-              
-              <div className="mt-8 max-w-3xl mx-auto">
-                <video 
-                  src={heroVideo}
-                  controls
-                  className="w-full rounded-2xl shadow-2xl border-4"
-                  poster=""
-                  aria-label="Vídeo de demonstração do atendimento automatizado com IA"
-                  style={{ borderColor: 'rgba(255, 215, 0, 0.2)' }}
-                >
-                  Seu navegador não suporta a tag de vídeo.
-                </video>
               </div>
 
               <div className="flex items-center gap-8 justify-center pt-8 pb-10">
@@ -499,6 +501,28 @@ const MercadoLivre = () => {
           </div>
         </div>
       </section>  
+
+      {/* Experience Section
+        <section id="experiencia" className="py-20" style={{ backgroundColor: '#0E1428' }}>
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Tenha uma <span style={{ color: '#3483FA' }}>experiência</span> com a <span style={{ color: '#3483FA' }}>Julia</span>
+              </h2>
+              <p className="text-xl text-white/90 mb-12">
+                Converse com a JulIA e pergunte tudo sobre o Grupo W7
+              </p>
+              
+              <div>
+                <iframe 
+                  id="zaia-iframe"
+                  src="https://platform.hellojulia.com.br/embed/chat/67174"
+                  className="w-full h-[400px] rounded-lg border border-white/20"
+                />
+              </div>
+            </div>
+          </div>
+        </section> */}
 
       {/* CTA Section */}
       <section 

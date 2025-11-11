@@ -155,7 +155,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -167,7 +167,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'        
       },
       {
         name: 'Master',
@@ -178,7 +178,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       }
     ],
     annual: [
@@ -191,7 +191,7 @@ const Index = () => {
           '5.000.000 de caracteres para treinar o Cérebro',
           'Suporte 8/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       },
       {
         name: 'Premium',
@@ -203,7 +203,7 @@ const Index = () => {
           'Suporte 12/7'
         ],
         featured: true,
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       },
       {
         name: 'Master',
@@ -214,7 +214,7 @@ const Index = () => {
           '12.000.000 de caracteres para treinar o Cérebro',
           'Suporte 24/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       }
     ],
     custom: [
@@ -227,7 +227,7 @@ const Index = () => {
           'Cérebro personalizado',
           'Suporte Dedicado 24/7'
         ],
-        link: '#contact'
+        link: 'https://www.hellojulia.com.br/formulario'
       }
     ]
   };
