@@ -16,6 +16,7 @@ import Telecomunicacao from "./pages/landing/Telecomunicacao";
 import LeadCapture from "./pages/landing/Captacao";
 import Pay from "./pages/landing/Pay";
 import MercadoLivre from "./pages/landing/MercadoLivre";
+import Forms from "./pages/Forms";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/captacao" element={<LeadCapture />} />
           <Route path="/pay" element={<Pay />} />
           <Route path="/mercadolivre" element={<MercadoLivre />} />
+          <Route path="/formulario" element={<Forms />} />
           <Route 
             path="/privacidade" 
             element={
