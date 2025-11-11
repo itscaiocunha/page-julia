@@ -45,7 +45,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-<<<<<<< HEAD
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -57,12 +56,10 @@ All colors MUST be HSL.
 
   .dark .glass {
     @apply bg-black/100 backdrop-blur-md border border-white/10;
-=======
   }
 
   .perspective-1000 {
     perspective: 1000px;
->>>>>>> bb7e6980b949b8a380582348b2934facdf4d6d3c
   }
 
   .cube-3d {

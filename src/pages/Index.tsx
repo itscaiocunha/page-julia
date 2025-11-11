@@ -266,10 +266,10 @@ const Index = () => {
                 transition={{ duration: 0.6 }}
                 className="order-2 md:order-1"
               >
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                  <span className="text-gradient">ATENDIMENTO</span>
-                  {' '}HUMANIZADO E{' '}
-                  <span className="text-gradient">INTELIGENTE</span>
+                <h1 className="text-4xl md:text-6xl text-julia-blue font-bold mb-6">
+                  <span className="text-white">ATENDIMENTO</span>
+                  {' '}HUMANIZADO <span className="text-white">E</span>{' '}
+                  <span className="text-julia-blue">INTELIGENTE</span>
                 </h1>
                 <p className="text-lg md:text-xl text-white-600 mb-8">
                   Deseja ter um agente disponível 24 horas por dia para um atendimento personalizado e que responda até mesmo às questões mais complexas da sua empresa?
@@ -277,7 +277,7 @@ const Index = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white px-8 py-4 rounded-lg font-semibold"
+                  className="bg-gradient-to-r from-julia-blue to-julia-darkBlue text-white px-8 py-4 mr-6 rounded-lg font-semibold"
                   onClick={() => document.getElementById('our-pricings')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   TESTE GRÁTIS
@@ -311,7 +311,7 @@ const Index = () => {
          {/* Integrations Section */}
                   <section className="container mx-auto px-4 py-16 border-t border-gray-800">
                     <div className="text-center mb-16">
-                      <h2 className="text-3xl font-bold mb-4">Integrações Poderosas</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Integrações</h2>
                       <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                         Nossa plataforma se integra perfeitamente com as  <br/> principais ferramentas do mercado
                       </p>
@@ -473,7 +473,7 @@ const Index = () => {
               </h2>
               
               <div className="flex justify-center">
-                <iframe width="660" height="415" src="https://www.youtube.com/embed/rhJJSpa6hRE?si=LUWgQb2rsLvmEdaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="660" height="415" src="https://www.youtube.com/embed/rhJJSpa6hRE?si=LUWgQb2rsLvmEdaw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
               </div>
             </div>
           </div>
@@ -551,9 +551,9 @@ const Index = () => {
             <div className="flex items-center gap-2">
               <img className="w-32" src="/images/juliawhite.png" alt="logo Julia" />
             </div>
-            <div className="flex items-center gap-4 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text font-semibold">
-              <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> | 
-              <a href="https://www.linkedin.com/company/hellojulia/">LinkedIn</a> |              
+            <div className="flex items-center gap-4 bg-blue-400 to-purple-500 text-transparent bg-clip-text font-semibold">
+              <a href="https://www.instagram.com/hello.juliabr/">Instagram</a> <span className='text-white'>|</span>
+              <a href="https://www.linkedin.com/company/hellojulia/">LinkedIn</a> <span className='text-white'>|</span>              
               <a href="https://wa.me/5519993297037">WhatsApp</a>
             </div>
             <p className="text-gray-500 text-sm text-center md:text-right">
